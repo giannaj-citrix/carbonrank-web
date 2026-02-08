@@ -24,1095 +24,663 @@
   --max-width: 1120px;
 }
 
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      color: var(--carbon-black);
-      background: var(--pure-white);
-      line-height: 1.5;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    .page {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
-
-    header {
-      border-bottom: 1px solid #e5e5e5;
-      background: rgba(255, 255, 255, 0.96);
-      backdrop-filter: blur(10px);
-      position: sticky;
-      top: 0;
-      z-index: 20;
-    }
-
-    .nav {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 14px 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-    }
-
-    .nav-left {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .logo-shield {
-      width: 28px;
-      height: 28px;
-      border-radius: 50%;
-      background: radial-gradient(circle at 30% 30%, #2ABFA3, #0F3D2E);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--pure-white);
-      font-size: 16px;
-      font-weight: 700;
-    }
-
-    .logo-text {
-      display: flex;
-      flex-direction: column;
-      font-size: 14px;
-    }
-
-    .logo-text-main {
-      font-weight: 700;
-      color: var(--carbon-green);
-    }
-
-    .logo-text-sub {
-      font-size: 11px;
-      color: var(--slate-grey);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
-
-    .nav-center {
-      display: flex;
-      gap: 18px;
-      font-size: 14px;
-      color: var(--slate-grey);
-    }
-
-    .nav-link {
-      position: relative;
-      padding-bottom: 2px;
-      cursor: pointer;
-    }
-
-    .nav-link:hover::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 100%;
-      height: 2px;
-      background: var(--electric-teal);
-      border-radius: 999px;
-    }
-
-    .nav-right {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 14px;
-    }
-
-    .btn {
-      border-radius: 999px;
-      padding: 8px 16px;
-      font-size: 14px;
-      font-weight: 500;
-      border: none;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-      white-space: nowrap;
-    }
-
-    .btn-primary {
-      background: var(--electric-teal);
-      color: var(--pure-white);
-      box-shadow: var(--shadow-soft);
-    }
-
-    .btn-secondary {
-      background: transparent;
-      color: var(--carbon-green);
-      border: 1px solid rgba(15, 61, 46, 0.18);
-    }
-
-    main {
-      flex: 1;
-    }
-
-    .section {
-      padding: 40px 20px;
-    }
-
-    .section-inner {
-      max-width: var(--max-width);
-      margin: 0 auto;
-    }
-
-    .section-light {
-      background: var(--soft-grey);
-    }
-
-    .section-split {
-      display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
-      gap: 40px;
-      align-items: center;
-    }
-
-    .eyebrow {
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--slate-grey);
-      margin-bottom: 10px;
-    }
-
-    h1, h2, h3 {
-      font-weight: 700;
-      color: var(--carbon-black);
-    }
-
-    h1 {
-      font-size: clamp(28px, 4vw, 36px);
-      margin-bottom: 12px;
-    }
-
-    h2 {
-      font-size: 24px;
-      margin-bottom: 12px;
-    }
-
-    h3 {
-      font-size: 18px;
-      margin-bottom: 8px;
-    }
-
-    p {
-      font-size: 14px;
-      color: var(--slate-grey);
-      margin-bottom: 10px;
-    }
-
-    .hero-kicker {
-      font-size: 16px;
-      color: var(--carbon-green);
-      margin-bottom: 16px;
-    }
-
-    .hero-cta-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 18px;
-      margin-bottom: 14px;
-    }
-
-    .hero-footnote {
-      font-size: 12px;
-      color: var(--slate-grey);
-    }
-
-    .hero-dashboard {
-      background: var(--pure-white);
-      border-radius: var(--radius-lg);
-      box-shadow: var(--shadow-soft);
-      padding: 18px;
-      display: grid;
-      grid-template-columns: 1.1fr 1fr;
-      gap: 16px;
-    }
-
-    .hero-score-block {
-      border-radius: var(--radius-md);
-      background: linear-gradient(135deg, #0F3D2E, #2ABFA3);
-      color: var(--pure-white);
-      padding: 14px;
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
-
-    .hero-score-label {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      opacity: 0.9;
-    }
-
-    .hero-score-value {
-      font-size: 26px;
-      font-weight: 700;
-    }
-
-    .hero-score-sub {
-      font-size: 12px;
-      opacity: 0.9;
-    }
-
-    .hero-metrics {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 10px;
-      margin-top: 10px;
-    }
-
-    .metric-card {
-      background: rgba(255, 255, 255, 0.08);
-      border-radius: var(--radius-sm);
-      padding: 8px;
-      font-size: 11px;
-    }
-
-    .metric-label {
-      opacity: 0.9;
-      margin-bottom: 2px;
-    }
-
-    .metric-value {
-      font-weight: 600;
-    }
-
-    .hero-status {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-top: 10px;
-      font-size: 12px;
-    }
-
-    .status-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 4px 10px;
-      border-radius: 999px;
-      background: rgba(0, 0, 0, 0.18);
-      font-size: 11px;
-    }
-
-    .status-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--gold);
-    }
-
-    .hero-table-preview {
-      border-radius: var(--radius-md);
-      border: 1px solid #e5e5e5;
-      padding: 10px;
-      background: var(--soft-grey);
-    }
-
-    .table-header, .table-row {
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr 0.9fr 0.9fr 0.9fr 0.9fr;
-      gap: 6px;
-      align-items: center;
-    }
-
-    .table-header {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--slate-grey);
-      margin-bottom: 6px;
-    }
-
-    .table-row {
-      font-size: 12px;
-      background: var(--pure-white);
-      border-radius: var(--radius-sm);
-      padding: 6px 8px;
-      margin-bottom: 4px;
-    }
-
-    .table-provider {
-      font-weight: 600;
-      color: var(--carbon-black);
-    }
-
-    .table-score-pill {
-      padding: 2px 8px;
-      border-radius: 999px;
-      background: rgba(42, 191, 163, 0.12);
-      color: var(--carbon-green);
-      font-size: 11px;
-      text-align: center;
-    }
-
-    .table-status-pill {
-      padding: 2px 8px;
-      border-radius: 999px;
-      background: rgba(212, 167, 44, 0.12);
-      color: var(--carbon-black);
-      font-size: 11px;
-      text-align: center;
-    }
-
-    .table-switch-link {
-      font-size: 11px;
-      color: var(--electric-teal);
-      text-decoration: underline;
-      text-align: right;
-      cursor: pointer;
-    }
-
-    .trust-strip {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 16px;
-      font-size: 11px;
-      color: var(--slate-grey);
-      margin-top: 18px;
-    }
-
-    .trust-logos {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .trust-pill {
-      padding: 6px 10px;
-      border-radius: 999px;
-      border: 1px dashed #d0d0d0;
-      font-size: 11px;
-      color: var(--slate-grey);
-    }
-
-    .cards-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 18px;
-      margin-top: 18px;
-    }
-
-    .card {
-      background: var(--pure-white);
-      border-radius: var(--radius-md);
-      padding: 16px;
-      box-shadow: var(--shadow-soft);
-      border: 1px solid rgba(0, 0, 0, 0.02);
-    }
-
-    .card-eyebrow {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: var(--slate-grey);
-      margin-bottom: 6px;
-    }
-
-    .card-title {
-      font-size: 15px;
-      font-weight: 600;
-      margin-bottom: 6px;
-      color: var(--carbon-black);
-    }
-
-    .card-body {
-      font-size: 13px;
-      color: var(--slate-grey);
-    }
-
-    .steps-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 18px;
-      margin-top: 18px;
-    }
-
-    .step {
-      background: var(--pure-white);
-      border-radius: var(--radius-md);
-      padding: 14px;
-      border: 1px solid #e5e5e5;
-    }
-
-    .step-number {
-      font-size: 12px;
-      font-weight: 600;
-      color: var(--electric-teal);
-      margin-bottom: 4px;
-    }
-
-    .step-title {
-      font-size: 14px;
-      font-weight: 600;
-      margin-bottom: 6px;
-    }
-
-    .step-body {
-      font-size: 13px;
-      color: var(--slate-grey);
-    }
-
-    .section-header {
-      display: flex;
-      align-items: baseline;
-      justify-content: space-between;
-      gap: 16px;
-      margin-bottom: 10px;
-    }
-
-    .section-header p {
-      margin-bottom: 0;
-    }
-
-    .filters-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 10px;
-      font-size: 11px;
-    }
-
-    .filter-pill {
-      padding: 4px 10px;
-      border-radius: 999px;
-      border: 1px solid #d0d0d0;
-      cursor: pointer;
-      color: var(--slate-grey);
-    }
-
-    .filter-pill.active {
-      border-color: var(--electric-teal);
-      background: rgba(42, 191, 163, 0.08);
-      color: var(--carbon-green);
-    }
-
-    .tech-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 18px;
-      margin-top: 18px;
-    }
-
-    .badge-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 14px;
-    }
-
-    .status-badge {
-      display: inline-flex;
-      flex-direction: column;
-      gap: 2px;
-      padding: 10px 12px;
-      border-radius: var(--radius-md);
-      background: var(--pure-white);
-      box-shadow: var(--shadow-soft);
-      min-width: 120px;
-    }
-
-    .status-label {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: var(--slate-grey);
-    }
-
-    .status-name {
-      font-size: 14px;
-      font-weight: 600;
-    }
-
-    .status-desc {
-      font-size: 12px;
-      color: var(--slate-grey);
-    }
-
-    .status-bronze .status-name {
-      color: var(--bronze);
-    }
-
-    .status-silver .status-name {
-      color: var(--silver);
-    }
-
-    .status-gold .status-name {
-      color: var(--gold);
-    }
-
-    .why-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
-      gap: 24px;
-      margin-top: 16px;
-    }
-
-    .list {
-      list-style: none;
-      padding-left: 0;
-      font-size: 13px;
-      color: var(--slate-grey);
-    }
-
-    .list li {
-      margin-bottom: 6px;
-      display: flex;
-      gap: 6px;
-    }
-
-    .list-bullet {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--electric-teal);
-      margin-top: 6px;
-      flex-shrink: 0;
-    }
-
-    footer {
-      border-top: 1px solid #e5e5e5;
-      padding: 24px 20px;
-      background: var(--pure-white);
-      margin-top: 20px;
-    }
-
-    .footer-inner {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 16px;
-      font-size: 12px;
-      color: var(--slate-grey);
-    }
-
-    .footer-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    .footer-meta {
-      font-size: 11px;
-      color: var(--slate-grey);
-    }
-
-    @media (max-width: 900px) {
-      .nav-center {
-        display: none;
-      }
-
-      .section-split {
-        grid-template-columns: minmax(0, 1fr);
-      }
-
-      .hero-dashboard {
-        grid-template-columns: minmax(0, 1fr);
-      }
-
-      .cards-grid,
-      .steps-grid,
-      .tech-grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
-
-      .why-grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
-
-      .table-header,
-      .table-row {
-        grid-template-columns: 1.4fr 0.9fr 1fr 1fr;
-      }
-
-      .table-row > :nth-child(5),
-      .table-row > :nth-child(6),
-      .table-header > :nth-child(5),
-      .table-header > :nth-child(6) {
-        display: none;
-      }
-    }
+/* LOGO CSS */
+.logo-svg {
+  height: 42px;
+  width: auto;
+  display: block;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: var(--carbon-black);
+  background: var(--pure-white);
+  line-height: 1.5;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  border-bottom: 1px solid #e5e5e5;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.nav {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-center {
+  display: flex;
+  gap: 18px;
+  font-size: 14px;
+  color: var(--slate-grey);
+}
+
+.nav-link {
+  position: relative;
+  padding-bottom: 2px;
+  cursor: pointer;
+}
+
+.nav-link:hover::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--electric-teal);
+  border-radius: 999px;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+}
+
+.btn {
+  border-radius: 999px;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background: var(--electric-teal);
+  color: var(--pure-white);
+  box-shadow: var(--shadow-soft);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--carbon-green);
+  border: 1px solid rgba(15, 61, 46, 0.18);
+}
+
+main {
+  flex: 1;
+}
+
+.section {
+  padding: 40px 20px;
+}
+
+.section-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.section-light {
+  background: var(--soft-grey);
+}
+
+.section-split {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: 40px;
+  align-items: center;
+}
+
+.eyebrow {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--slate-grey);
+  margin-bottom: 10px;
+}
+
+h1, h2, h3 {
+  font-weight: 700;
+  color: var(--carbon-black);
+}
+
+h1 {
+  font-size: clamp(28px, 4vw, 36px);
+  margin-bottom: 12px;
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 12px;
+}
+
+h3 {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+p {
+  font-size: 14px;
+  color: var(--slate-grey);
+  margin-bottom: 10px;
+}
+
+.hero-kicker {
+  font-size: 16px;
+  color: var(--carbon-green);
+  margin-bottom: 16px;
+}
+
+.hero-cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+  margin-bottom: 14px;
+}
+
+.hero-footnote {
+  font-size: 12px;
+  color: var(--slate-grey);
+}
+
+.hero-dashboard {
+  background: var(--pure-white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  padding: 18px;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 16px;
+}
+
+.hero-score-block {
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, #0F3D2E, #2ABFA3);
+  color: var(--pure-white);
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.hero-score-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  opacity: 0.9;
+}
+
+.hero-score-value {
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.hero-score-sub {
+  font-size: 12px;
+  opacity: 0.9;
+}
+
+.hero-metrics {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.metric-card {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-sm);
+  padding: 8px;
+  font-size: 11px;
+}
+
+.metric-label {
+  opacity: 0.9;
+  margin-bottom: 2px;
+}
+
+.metric-value {
+  font-weight: 600;
+}
+
+.hero-status {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+  font-size: 12px;
+}
+
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.18);
+  font-size: 11px;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--gold);
+}
+
+.hero-table-preview {
+  border-radius: var(--radius-md);
+  border: 1px solid #e5e5e5;
+  padding: 10px;
+  background: var(--soft-grey);
+}
+
+.table-header, .table-row {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr 0.9fr 0.9fr 0.9fr 0.9fr;
+  gap: 6px;
+  align-items: center;
+}
+
+.table-header {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--slate-grey);
+  margin-bottom: 6px;
+}
+
+.table-row {
+  font-size: 12px;
+  background: var(--pure-white);
+  border-radius: var(--radius-sm);
+  padding: 6px 8px;
+  margin-bottom: 4px;
+}
+
+.table-provider {
+  font-weight: 600;
+  color: var(--carbon-black);
+}
+
+.table-score-pill {
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: rgba(42, 191, 163, 0.12);
+  color: var(--carbon-green);
+  font-size: 11px;
+  text-align: center;
+}
+
+.table-status-pill {
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: rgba(212, 167, 44, 0.12);
+  color: var(--carbon-black);
+  font-size: 11px;
+  text-align: center;
+}
+
+.table-switch-link {
+  font-size: 11px;
+  color: var(--electric-teal);
+  text-decoration: underline;
+  text-align: right;
+  cursor: pointer;
+}
+
+.trust-strip {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+  font-size: 11px;
+  color: var(--slate-grey);
+  margin-top: 18px;
+}
+
+.trust-logos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.trust-pill {
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px dashed #d0d0d0;
+  font-size: 11px;
+  color: var(--slate-grey);
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 18px;
+}
+
+.card {
+  background: var(--pure-white);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  box-shadow: var(--shadow-soft);
+  border: 1px solid rgba(0, 0, 0, 0.02);
+}
+
+.card-eyebrow {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-letter-spacing: 0.12em;
+  color: var(--slate-grey);
+  margin-bottom: 6px;
+}
+
+.card-title {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: var(--carbon-black);
+}
+
+.card-body {
+  font-size: 13px;
+  color: var(--slate-grey);
+}
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 18px;
+}
+
+.step {
+  background: var(--pure-white);
+  border-radius: var(--radius-md);
+  padding: 14px;
+  border: 1px solid #e5e5e5;
+}
+
+.step-number {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--electric-teal);
+  margin-bottom: 4px;
+}
+
+.step-title {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.step-body {
+  font-size: 13px;
+  color: var(--slate-grey);
+}
+
+.section-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 10px;
+}
+
+.section-header p {
+  margin-bottom: 0;
+}
+
+.filters-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 10px;
+  font-size: 11px;
+}
+
+.filter-pill {
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid #d0d0d0;
+  cursor: pointer;
+  color: var(--slate-grey);
+}
+
+.filter-pill.active {
+  border-color: var(--electric-teal);
+  background: rgba(42, 191, 163, 0.08);
+  color: var(--carbon-green);
+}
+
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 18px;
+}
+
+.badge-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.status-badge {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 10px 12px;
+  border-radius: var(--radius-md);
+  background: var(--pure-white);
+  box-shadow: var(--shadow-soft);
+  min-width: 120px;
+}
+
+.status-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--slate-grey);
+}
+
+.status-name {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.status-desc {
+  font-size: 12px;
+  color: var(--slate-grey);
+}
+
+.status-bronze .status-name {
+  color: var(--bronze);
+}
+
+.status-silver .status-name {
+  color: var(--silver);
+}
+
+.status-gold .status-name {
+  color: var(--gold);
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: 24px;
+  margin-top: 16px;
+}
+
+.list {
+  list-style: none;
+  padding-left: 0;
+  font-size: 13px;
+  color: var(--slate-grey);
+}
+
+.list li {
+  margin-bottom: 6px;
+  display: flex;
+  gap: 6px;
+}
+
+.list-bullet {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--electric-teal);
+  margin-top: 6px;
+  flex-shrink: 0;
+}
+
+footer {
+  border-top: 1px solid #e5e5e5;
+  padding: 24px 20px;
+  background: var(--pure-white);
+  margin-top: 20px;
+}
+
+.footer-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 16px;
+  font-size: 12px;
+  color: var(--slate-grey);
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.footer-meta {
+  font-size: 11px;
+  color: var(--slate-grey);
+}
+
+@media (max-width: 900px) {
+  .nav-center {
+    display: none;
+  }
+
+  .section-split {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .hero-dashboard {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .cards-grid,
+  .steps-grid,
+  .tech-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .why-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .table-header,
+  .table-row {
+    grid-template-columns: 1.4fr 0.9fr 1fr 1fr;
+  }
+
+  .table-row > :nth-child(5),
+  .table-row > :nth-child(6),
+  .table-header > :nth-child(5),
+  .table-header > :nth-child(6) {
+    display: none;
+  }
+}
   </style>
 </head>
 <body>
 <div class="page">
   <header>
     <nav class="nav">
+
+      <!-- NEW LOGO INSERTED HERE -->
       <div class="nav-left">
-<div class="nav-left">
-  <svg class="logo-svg" viewBox="0 0 320 90" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-      <linearGradient id="shieldGradient" x1="0" y1="0" x2="1" y2="1">
-        <stop offset="0%" stop-color="#0F3D2E"/>
-        <stop offset="100%" stop-color="#2ABFA3"/>
-      </linearGradient>
-    </defs>
+        <svg class="logo-svg" viewBox="0 0 320 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="shieldGradient" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#0F3D2E"/>
+              <stop offset="100%" stop-color="#2ABFA3"/>
+            </linearGradient>
+          </defs>
 
-    <!-- Shield -->
-    <path d="M45 10
-             Q60 18 75 10
-             Q78 40 60 65
-             Q45 80 30 65
-             Q12 40 15 10
-             Q30 18 45 10Z"
-          fill="url(#shieldGradient)" />
+          <path d="M45 10
+                   Q60 18 75 10
+                   Q78 40 60 65
+                   Q45 80 30 65
+                   Q12 40 15 10
+                   Q30 18 45 10Z"
+                fill="url(#shieldGradient)" />
 
-    <!-- Leaf -->
-    <path d="M48 28
-             C58 28 62 40 55 48
-             C50 54 42 52 40 45
-             C38 36 42 28 48 28Z"
-          fill="white" opacity="0.85"/>
+          <path d="M48 28
+                   C58 28 62 40 55 48
+                   C50 54 42 52 40 45
+                   C38 36 42 28 48 28Z"
+                fill="white" opacity="0.85"/>
 
-    <!-- Vertical Data Line -->
-    <rect x="44" y="20" width="2.5" height="40" rx="1.2" fill="white" opacity="0.7"/>
+          <rect x="44" y="20" width="2.5" height="40" rx="1.2" fill="white" opacity="0.7"/>
 
-    <!-- Text -->
-    <text x="95" y="38" font-family="Segoe UI, sans-serif" font-size="28" font-weight="700" fill="#0F3D2E">
-      Green Shield
-    </text>
+          <text x="95" y="38" font-family="Segoe UI, sans-serif" font-size="28" font-weight="700" fill="#0F3D2E">
+            Green Shield
+          </text>
 
-    <text x="95" y="60" font-family="Segoe UI, sans-serif" font-size="14" font-weight="400" fill="#6E7A75">
-      powered by CarbonRank
-    </text>
-  </svg>
-</div>
-
+          <text x="95" y="60" font-family="Segoe UI, sans-serif" font-size="14" font-weight="400" fill="#6E7A75">
+            powered by CarbonRank
+          </text>
+        </svg>
       </div>
+
       <div class="nav-center">
         <div class="nav-link">Compare</div>
         <div class="nav-link">How It Works</div>
-        <div class="nav-link">Green Status</div>
-        <div class="nav-link">Providers</div>
-        <div class="nav-link">About</div>
-        <div class="nav-link">Privacy Vault</div>
-      </div>
-      <div class="nav-right">
-        <button class="btn btn-secondary">Log In</button>
-        <button class="btn btn-primary">Create Account</button>
-      </div>
-    </nav>
-  </header>
-
-  <main>
-    <!-- HERO -->
-    <section class="section">
-      <div class="section-inner section-split">
-        <div>
-          <div class="eyebrow">Compare Carbon. Act Smarter. Earn Rewards.</div>
-          <h1>Make choices that matter — for your wallet and the planet.</h1>
-          <p class="hero-kicker">
-            Every day Australians compare energy, insurance and loans — but no one shows you the carbon impact of those choices… until now.
-          </p>
-          <p>
-            Green Shield lets you compare providers by price <strong>and</strong> carbon impact, powered by the CarbonRank engine and protected by our Zero Trust Privacy Vault.
-          </p>
-          <div class="hero-cta-row">
-            <button class="btn btn-primary">Start Comparing</button>
-            <button class="btn btn-secondary">See Your Carbon Score</button>
-          </div>
-          <p class="hero-footnote">
-            It’s where smart savings meet real environmental action.
-          </p>
-          <div class="trust-strip">
-            <span>Built on Australia’s Consumer Data Right.</span>
-            <div class="trust-logos">
-              <span class="trust-pill">CDR‑enabled data sharing</span>
-              <span class="trust-pill">Zero Trust Infrastructure</span>
-              <span class="trust-pill">End‑to‑end encryption</span>
-            </div>
-          </div>
-        </div>
-
-        <div>
-          <div class="hero-dashboard">
-            <div class="hero-score-block">
-              <div class="hero-score-label">Your Green Shield Score</div>
-              <div class="hero-score-value">82 / 100</div>
-              <div class="hero-score-sub">High Carbon ROI — you’re ahead of the average Australian household.</div>
-              <div class="hero-metrics">
-                <div class="metric-card">
-                  <div class="metric-label">CO₂ saved this year</div>
-                  <div class="metric-value">4.2 tonnes</div>
-                  <div class="metric-label">≈ 60 trees planted</div>
-                </div>
-                <div class="metric-card">
-                  <div class="metric-label">Estimated savings</div>
-                  <div class="metric-value">$420 / year</div>
-                  <div class="metric-label">vs your current providers</div>
-                </div>
-              </div>
-              <div class="hero-status">
-                <div class="status-pill">
-                  <span class="status-dot"></span>
-                  <span>Green Status: Gold</span>
-                </div>
-                <span>Unlock premium perks with Green Providers.</span>
-              </div>
-            </div>
-
-            <div class="hero-table-preview">
-              <div class="table-header">
-                <span>Provider</span>
-                <span>Price</span>
-                <span>Carbon ROI</span>
-                <span>CO₂ Saved</span>
-                <span>Score</span>
-                <span>Status</span>
-              </div>
-              <div class="table-row">
-                <span class="table-provider">Provider X</span>
-                <span>$110 / mth</span>
-                <span>High</span>
-                <span>4.0 t</span>
-                <span><span class="table-score-pill">88 / 100</span></span>
-                <span><span class="table-status-pill">Gold Partner</span></span>
-              </div>
-              <div class="table-row">
-                <span class="table-provider">Provider Y</span>
-                <span>$104 / mth</span>
-                <span>Medium</span>
-                <span>2.3 t</span>
-                <span><span class="table-score-pill">74 / 100</span></span>
-                <span><span class="table-status-pill">Silver Partner</span></span>
-              </div>
-              <div class="table-row">
-                <span class="table-provider">Provider Z</span>
-                <span>$99 / mth</span>
-                <span>Low</span>
-                <span>1.1 t</span>
-                <span><span class="table-score-pill">61 / 100</span></span>
-                <span><span class="table-status-pill">Bronze Partner</span></span>
-              </div>
-              <div class="table-switch-link">See full comparison →</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- VALUE PROPOSITION -->
-    <section class="section section-light">
-      <div class="section-inner">
-        <div class="section-header">
-          <div>
-            <div class="eyebrow">What Green Shield does</div>
-            <h2>Compare more than price — compare Carbon ROI.</h2>
-          </div>
-          <p>
-            Whether you’re switching energy providers, choosing a loan, or reassessing your super, Green Shield shows you the carbon return on every decision.
-          </p>
-        </div>
-
-        <div class="cards-grid">
-          <div class="card">
-            <div class="card-eyebrow">Insight</div>
-            <div class="card-title">Price + carbon in one view</div>
-            <div class="card-body">
-              We analyse cost <strong>and</strong> CO₂ impact so you can see your Carbon ROI before you switch. No guesswork, no greenwashing — just clear numbers.
-            </div>
-          </div>
-          <div class="card">
-            <div class="card-eyebrow">Privacy Vault</div>
-            <div class="card-title">Your data, your control — always</div>
-            <div class="card-body">
-              We use Zero Trust Infrastructure and Australia’s Consumer Data Right (CDR). Your identity is encrypted, never sold, and even we can’t see your personal details.
-            </div>
-          </div>
-          <div class="card">
-            <div class="card-eyebrow">Rewards</div>
-            <div class="card-title">Earn your Green Status</div>
-            <div class="card-body">
-              As you make greener choices, you earn Bronze, Silver or Gold status — unlocking real‑world perks with Green Providers from 2026 onwards.
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- HOW IT WORKS -->
-    <section class="section">
-      <div class="section-inner">
-        <div class="section-header">
-          <div>
-            <div class="eyebrow">How it works</div>
-            <h2>From comparison to action in three simple steps.</h2>
-          </div>
-          <p>
-            Built to feel like a familiar comparison site — with a smarter engine underneath.
-          </p>
-        </div>
-
-        <div class="steps-grid">
-          <div class="step">
-            <div class="step-number">1</div>
-            <div class="step-title">Create your free profile</div>
-            <div class="step-body">
-              Sign up in minutes. No upfront documents, no long forms. Just tell us what you want to compare first.
-            </div>
-          </div>
-          <div class="step">
-            <div class="step-number">2</div>
-            <div class="step-title">Link your data securely</div>
-            <div class="step-body">
-              Connect your bank, utilities or super via CDR. We use encrypted tokens so your identity stays protected.
-            </div>
-          </div>
-          <div class="step">
-            <div class="step-number">3</div>
-            <div class="step-title">Compare, switch & earn</div>
-            <div class="step-body">
-              See your Carbon ROI, switch to better providers, and earn Green Status points for every smart decision.
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- COMPARISON ENGINE -->
-    <section class="section section-light">
-      <div class="section-inner">
-        <div class="section-header">
-          <div>
-            <div class="eyebrow">The comparison engine</div>
-            <h2>Know your impact before you switch.</h2>
-          </div>
-          <p>
-            A cleaner, calmer comparison table — built around a single, powerful metric: your Green Shield Score.
-          </p>
-        </div>
-
-        <div class="filters-row">
-          <div class="filter-pill active">Best overall value</div>
-          <div class="filter-pill">Lowest carbon</div>
-          <div class="filter-pill">Lowest cost</div>
-          <div class="filter-pill">Green Shield Verified</div>
-        </div>
-
-        <div class="hero-table-preview">
-          <div class="table-header">
-            <span>Provider</span>
-            <span>Price</span>
-            <span>Carbon ROI</span>
-            <span>CO₂ Saved</span>
-            <span>Score</span>
-            <span>Status</span>
-          </div>
-          <div class="table-row">
-            <span class="table-provider">Green Energy Co</span>
-            <span>$108 / mth</span>
-            <span>Very High</span>
-            <span>4.5 t</span>
-            <span><span class="table-score-pill">91 / 100</span></span>
-            <span><span class="table-status-pill">Gold Partner</span></span>
-          </div>
-          <div class="table-row">
-            <span class="table-provider">Balanced Utility</span>
-            <span>$102 / mth</span>
-            <span>High</span>
-            <span>3.1 t</span>
-            <span><span class="table-score-pill">83 / 100</span></span>
-            <span><span class="table-status-pill">Silver Partner</span></span>
-          </div>
-          <div class="table-row">
-            <span class="table-provider">Budget Saver</span>
-            <span>$95 / mth</span>
-            <span>Medium</span>
-            <span>1.8 t</span>
-            <span><span class="table-score-pill">71 / 100</span></span>
-            <span><span class="table-status-pill">Bronze Partner</span></span>
-          </div>
-          <div class="table-switch-link">Explore all providers →</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- TECH STACK -->
-    <section class="section">
-      <div class="section-inner">
-        <div class="section-header">
-          <div>
-            <div class="eyebrow">Under the hood</div>
-            <h2>The Green Shield tech stack, built for impact.</h2>
-          </div>
-          <p>
-            Three core components work together to turn your everyday choices into measurable carbon impact — without compromising your privacy.
-          </p>
-        </div>
-
-        <div class="tech-grid">
-          <div class="card">
-            <div class="card-eyebrow">Engine</div>
-            <div class="card-title">The Matchmaker</div>
-            <div class="card-body">
-              Not just “cheapest.” We calculate Carbon ROI — how much CO₂ you avoid per dollar when you switch. See the impact of moving your energy, super or loans before you commit.
-            </div>
-          </div>
-          <div class="card">
-            <div class="card-eyebrow">Security</div>
-            <div class="card-title">The Privacy Vault</div>
-            <div class="card-body">
-              Your identity is encrypted and separated from your usage data. We use Zero Trust Infrastructure and CDR‑based access so your data powers insights, not exploitation.
-            </div>
-          </div>
-          <div class="card">
-            <div class="card-eyebrow">Intelligence</div>
-            <div class="card-title">The CarbonRank Engine</div>
-            <div class="card-body">
-              An independent scoring engine that ranks providers on emissions, performance and transparency. No commissions, no pay‑to‑play — just objective rankings.
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- GREEN STATUS -->
-    <section class="section section-light">
-      <div class="section-inner">
-        <div class="section-header">
-          <div>
-            <div class="eyebrow">Green Status</div>
-            <h2>Good decisions deserve real‑world perks.</h2>
-          </div>
-          <p>
-            As you compare, switch and stay with greener providers, you earn Green Status — Bronze, Silver or Gold — unlocking benefits with our Green Provider partners.
-          </p>
-        </div>
-
-        <div class="badge-row">
-          <div class="status-badge status-bronze">
-            <div class="status-label">Tier 1</div>
-            <div class="status-name">Bronze</div>
-            <div class="status-desc">
-              Start your journey. Earn points for every comparison and first switch to a greener provider.
-            </div>
-          </div>
-          <div class="status-badge status-silver">
-            <div class="status-label">Tier 2</div>
-            <div class="status-name">Silver</div>
-            <div class="status-desc">
-              Unlock discounts on eco‑friendly products and services as your Carbon ROI improves over time.
-            </div>
-          </div>
-          <div class="status-badge status-gold">
-            <div class="status-label">Tier 3</div>
-            <div class="status-name">Gold</div>
-            <div class="status-desc">
-              Access premium perks: lower interest green loans, sustainable insurance offers and exclusive partner rewards (rolling out through 2026).
-            </div>
-          </div>
-        </div>
-
-        <div class="hero-cta-row" style="margin-top:20px;">
-          <button class="btn btn-primary">Check your Green Status</button>
-          <button class="btn btn-secondary">See upcoming partner perks</button>
-        </div>
-      </div>
-    </section>
-
-    <!-- WHY IT MATTERS -->
-    <section class="section">
-      <div class="section-inner">
-        <div class="section-header">
-          <div>
-            <div class="eyebrow">Why it matters</div>
-            <h2>Green Shield turns carbon into clarity.</h2>
-          </div>
-          <p>
-            Australians are choosing consciously — but without trusted data, it’s guesswork. We make carbon visible, comparable and rewarding.
-          </p>
-        </div>
-
-        <div class="why-grid">
-          <div>
-            <h3>For everyday Australians</h3>
-            <ul class="list">
-              <li>
-                <span class="list-bullet"></span>
-                <span>See how much CO₂ you really save when you switch providers.</span>
-              </li>
-              <li>
-                <span class="list-bullet"></span>
-                <span>Understand your impact in plain language — “4 tonnes saved = 60 trees planted.”</span>
-              </li>
-              <li>
-                <span class="list-bullet"></span>
-                <span>Make decisions that are good for your wallet and the planet at the same time.</span>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h3>For the bigger picture</h3>
-            <ul class="list">
-              <li>
-                <span class="list-bullet"></span>
-                <span>Stage 1: win consumer trust with clear, unbiased comparisons.</span>
-              </li>
-              <li>
-                <span class="list-bullet"></span>
-                <span>Stage 2: use that gravity to push corporates toward better carbon performance.</span>
-              </li>
-              <li>
-                <span class="list-bullet"></span>
-                <span>Stage 3: turn CarbonRank into a public accountability layer for providers and sectors.</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="hero-cta-row" style="margin-top:24px;">
-          <button class="btn btn-primary">Start your first comparison</button>
-          <button class="btn btn-secondary">Learn more about CarbonRank</button>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="footer-inner">
-      <div class="footer-links">
-        <a href="#" class="nav-link">Compare</a>
-        <a href="#" class="nav-link">Providers</a>
-        <a href="#" class="nav-link">Privacy Vault</a>
-        <a href="#" class="nav-link">Terms</a>
-        <a href="#" class="nav-link">CDR Policy</a>
-        <a href="#" class="nav-link">Contact</a>
-      </div>
-      <div class="footer-meta">
-        Powered by the CarbonRank Engine · © Green Shield by CarbonRank
-      </div>
-    </div>
-  </footer>
-</div>
-</body>
-</html>
+        <div class="nav-link
