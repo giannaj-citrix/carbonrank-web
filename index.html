@@ -667,14 +667,17 @@
 </head>
 <body>
 <div class="page">
-  <nav class="nav">
-    <div class="nav-left">
-      <img src="/assets/logo.png" 
-           alt="Green Shield powered by CarbonRank logo" 
-           class="logo-img" />
-    </div>
-  </nav>
-</header>
+  <header>
+    <nav class="nav">
+      <div class="nav-left">
+<div class="nav-left">
+  <svg class="logo-svg" viewBox="0 0 320 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="shieldGradient" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#0F3D2E"/>
+        <stop offset="100%" stop-color="#2ABFA3"/>
+      </linearGradient>
+    </defs>
 
     <!-- Shield -->
     <path d="M45 10
@@ -723,101 +726,91 @@
   </header>
 
   <main>
-  <!-- HERO -->
-  <section class="section">
-    <div class="section-inner section-split">
-
-      <!-- LEFT COLUMN -->
-      <div class="hero-left">
-        <div class="eyebrow">Compare Carbon. Act Smarter. Earn Rewards.</div>
-        <h1>Make choices that matter for your wallet and the planet.</h1>
-        <p class="hero-kicker">
-          Every day Australians compare energy, insurance and loans — but no one shows you the carbon impact of those choices… until now.
-        </p>
-        <p>
-          Green Shield lets you compare providers by price <strong>and</strong> carbon impact, powered by the CarbonRank engine and protected by our Zero Trust Privacy Vault.
-        </p>
-        <div class="hero-cta-row">
-          <button class="btn btn-primary">Start Comparing</button>
-          <button class="btn btn-secondary">See Your Carbon Score</button>
-        </div>
-      </div>
-
-      <!-- RIGHT COLUMN -->
-      <div class="hero-right">
-        <div class="hero-dashboard">
-          <div class="hero-score-block">
-            <div class="hero-score-label">Your Green Shield Score</div>
-            <div class="hero-score-value">82 / 100</div>
-            <div class="hero-score-sub">High Carbon ROI — you’re ahead of the average Australian household.</div>
-
-            <div class="hero-metrics">
-              <div class="metric-card">
-                <div class="metric-label">CO₂ saved this year</div>
-                <div class="metric-value">4.2 tonnes</div>
-                <div class="metric-label">≈ 60 trees planted</div>
-              </div>
-              <div class="metric-card">
-                <div class="metric-label">Estimated savings</div>
-                <div class="metric-value">$420 / year</div>
-                <div class="metric-label">vs your current providers</div>
-              </div>
-            </div>
-
-            <div class="hero-status">
-              <div class="status-pill">
-                <span class="status-dot"></span>
-                <span>Green Status: Gold</span>
-              </div>
-              <span>Unlock premium perks with Green Providers.</span>
-            </div>
+    <!-- HERO -->
+    <section class="section">
+      <div class="section-inner section-split">
+        <div>
+          <div class="eyebrow">Compare Carbon. Act Smarter. Earn Rewards.</div>
+          <h1>Make choices that matter for your wallet and the planet.</h1>
+          <p class="hero-kicker">
+            Every day Australians compare energy, insurance and loans — but no one shows you the carbon impact of those choices… until now.
+          </p>
+          <p>
+            Green Shield lets you compare providers by price <strong>and</strong> carbon impact, powered by the CarbonRank engine and protected by our Zero Trust Privacy Vault.
+          </p>
+          <div class="hero-cta-row">
+            <button class="btn btn-primary">Start Comparing</button>
+            <button class="btn btn-secondary">See Your Carbon Score</button>
           </div>
-
-          <div class="hero-table-preview">
-            <div class="table-header">
-              <span>Provider</span>
-              <span>Price</span>
-              <span>Carbon ROI</span>
-              <span>CO₂ Saved</span>
-              <span>Score</span>
-              <span>Status</span>
+          <p class="hero-footnote">
+            It’s where smart savings meet real environmental action.
+          </p>
+        <div>
+          <div class="hero-dashboard">
+            <div class="hero-score-block">
+              <div class="hero-score-label">Your Green Shield Score</div>
+              <div class="hero-score-value">82 / 100</div>
+              <div class="hero-score-sub">High Carbon ROI — you’re ahead of the average Australian household.</div>
+              <div class="hero-metrics">
+                <div class="metric-card">
+                  <div class="metric-label">CO₂ saved this year</div>
+                  <div class="metric-value">4.2 tonnes</div>
+                  <div class="metric-label">≈ 60 trees planted</div>
+                </div>
+                <div class="metric-card">
+                  <div class="metric-label">Estimated savings</div>
+                  <div class="metric-value">$420 / year</div>
+                  <div class="metric-label">vs your current providers</div>
+                </div>
+              </div>
+              <div class="hero-status">
+                <div class="status-pill">
+                  <span class="status-dot"></span>
+                  <span>Green Status: Gold</span>
+                </div>
+                <span>Unlock premium perks with Green Providers.</span>
+              </div>
             </div>
 
-            <div class="table-row">
-              <span class="table-provider">Provider X</span>
-              <span>$110 / mth</span>
-              <span>High</span>
-              <span>4.0 t</span>
-              <span><span class="table-score-pill">88 / 100</span></span>
-              <span><span class="table-status-pill">Gold Partner</span></span>
+            <div class="hero-table-preview">
+              <div class="table-header">
+                <span>Provider</span>
+                <span>Price</span>
+                <span>Carbon ROI</span>
+                <span>CO₂ Saved</span>
+                <span>Score</span>
+                <span>Status</span>
+              </div>
+              <div class="table-row">
+                <span class="table-provider">Provider X</span>
+                <span>$110 / mth</span>
+                <span>High</span>
+                <span>4.0 t</span>
+                <span><span class="table-score-pill">88 / 100</span></span>
+                <span><span class="table-status-pill">Gold Partner</span></span>
+              </div>
+              <div class="table-row">
+                <span class="table-provider">Provider Y</span>
+                <span>$104 / mth</span>
+                <span>Medium</span>
+                <span>2.3 t</span>
+                <span><span class="table-score-pill">74 / 100</span></span>
+                <span><span class="table-status-pill">Silver Partner</span></span>
+              </div>
+              <div class="table-row">
+                <span class="table-provider">Provider Z</span>
+                <span>$99 / mth</span>
+                <span>Low</span>
+                <span>1.1 t</span>
+                <span><span class="table-score-pill">61 / 100</span></span>
+                <span><span class="table-status-pill">Bronze Partner</span></span>
+              </div>
+              <div class="table-switch-link">See full comparison →</div>
             </div>
-
-            <div class="table-row">
-              <span class="table-provider">Provider Y</span>
-              <span>$104 / mth</span>
-              <span>Medium</span>
-              <span>2.3 t</span>
-              <span><span class="table-score-pill">74 / 100</span></span>
-              <span><span class="table-status-pill">Silver Partner</span></span>
-            </div>
-
-            <div class="table-row">
-              <span class="table-provider">Provider Z</span>
-              <span>$99 / mth</span>
-              <span>Low</span>
-              <span>1.1 t</span>
-              <span><span class="table-score-pill">61 / 100</span></span>
-              <span><span class="table-status-pill">Bronze Partner</span></span>
-            </div>
-
-            <div class="table-switch-link">See full comparison →</div>
           </div>
         </div>
       </div>
-
-    </div>
-  </section>
-</main>
+    </section>
 
     <!-- VALUE PROPOSITION -->
     <section class="section section-light">
@@ -825,7 +818,7 @@
         <div class="section-header">
           <div>
             <div class="eyebrow">What Green Shield does</div>
-            <h2>Compare more than price compare Carbon ROI.</h2>
+            <h2>Compare more than price — compare Carbon ROI.</h2>
           </div>
           <p>
             Whether you’re switching energy providers, choosing a loan, or reassessing your super, Green Shield shows you the carbon return on every decision.
