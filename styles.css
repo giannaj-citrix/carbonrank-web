@@ -1,0 +1,73 @@
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: #F7F9FA;
+  color: #1F2933;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 32px;
+  background: white;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.logo {
+  font-weight: 700;
+  color: #1E6F4C;
+}
+
+nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #1F2933;
+}
+
+nav .cta {
+  color: white;
+  background: #1E6F4C;
+  padding: 8px 14px;
+  border-radius: 6px;
+}
+
+.hero {
+  padding: 80px 32px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+}
+
+.hero button {
+  margin-top: 20px;
+  padding: 14px 24px;
+  background: #7ED957;
+  border: none;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.categories {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 40px;
+}
+
+.categories button {
+  padding: 16px 24px;
+  border: 1px solid #d1d5db;
+  background: white;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+footer {
+  text-align: center;
+  padding: 24px;
+  color: #6B7280;
+}
