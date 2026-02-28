@@ -61,40 +61,45 @@
             width: 100%;
         }
 
-        /* Custom Table Styles for Car Lists */
-        .car-list-item {
+        /* List Styles */
+        .ledger-list-item {
             border-bottom: 1px solid #f1f5f9;
-            padding: 10px 16px;
+            padding: 12px 16px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             font-size: 13px;
         }
-        .car-list-item:last-child {
+        .ledger-list-item:last-child {
             border-bottom: none;
         }
-        .car-name {
+        .item-name {
             display: flex;
             align-items: center;
+            font-weight: 600;
         }
-        .car-rank {
+        .item-rank {
             width: 24px;
             color: #94a3b8;
+            font-weight: 400;
         }
-        .car-stat {
+        .item-score {
             font-family: monospace;
             font-size: 11px;
             font-weight: 700;
-            color: #475569;
-            background: #f1f5f9;
             padding: 2px 8px;
             border-radius: 4px;
-            min-width: 45px;
+            min-width: 55px;
             text-align: center;
         }
-        .car-stat-danger {
-            color: #ef4444;
-            background: #fef2f2;
+        .score-high { color: #059669; background: #ecfdf5; }
+        .score-mid { color: #d97706; background: #fffbeb; }
+        .score-low { color: #ef4444; background: #fef2f2; }
+
+        .star-rating {
+            color: #fbbf24;
+            font-size: 10px;
+            margin-left: 8px;
         }
     </style>
 </head>
@@ -114,9 +119,10 @@
             </div>
             
             <div class="hidden md:flex items-center space-x-8 font-semibold text-sm text-slate-600">
-                <a href="#energy" class="hover:text-emerald-600 transition">Compare Providers</a>
-                <a href="#super" class="hover:text-emerald-600 transition">Audit Your Super</a>
-                <a href="#side-b" class="hover:text-emerald-600 transition">For Businesses</a>
+                <a href="#energy" class="hover:text-emerald-600 transition">Electricity & Gas</a>
+                <a href="#cars" class="hover:text-emerald-600 transition">Cars</a>
+                <a href="#connectivity" class="hover:text-emerald-600 transition">Phones & Internet</a>
+                <a href="#super" class="hover:text-emerald-600 transition">Superannuation</a>
             </div>
 
             <div class="flex items-center space-x-4">
@@ -143,177 +149,249 @@
     <div class="sticky top-20 z-40 bg-white border-b border-slate-100 overflow-x-auto category-nav">
         <div id="category-nav-links" class="max-w-7xl mx-auto px-6 py-4 flex space-x-12 whitespace-nowrap text-[15px] font-bold">
             <a href="#energy" class="nav-link transition">Electricity & Gas</a>
-            <a href="#cars" class="nav-link active transition">Cars</a>
-            <a href="#travel" class="nav-link transition">Travel</a>
-            <a href="#scorecard" class="nav-link transition">Scorecard Rating</a>
-            <a href="#connectivity" class="nav-link transition">Phone & Internet</a>
+            <a href="#cars" class="nav-link transition">Cars</a>
+            <a href="#connectivity" class="nav-link transition">Phones & Internet</a>
+            <a href="#super" class="nav-link transition">Superannuation</a>
         </div>
     </div>
 
     <section id="categories" class="py-12 px-6 bg-slate-50">
         <div class="max-w-7xl mx-auto">
             
-            <!-- Cars Section -->
+            <!-- SECTION: Electricity & Gas -->
+            <section id="energy" class="category-section mb-24 scroll-mt-48">
+                <div class="mb-8">
+                    <h2 class="text-slate-400 font-bold text-sm uppercase tracking-[0.2em] mb-2">Electricity & Gas</h2>
+                    <h3 class="text-slate-900 font-extrabold text-3xl mb-4">
+                        Australia Retailer Transparency Guide
+                    </h3>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                        <div class="bg-white border-l-4 border-emerald-500 p-6 shadow-sm rounded-r-lg md:col-span-2">
+                            <h4 class="font-bold text-slate-900 mb-1 text-sm uppercase tracking-wide">Consumer Audit Criteria</h4>
+                            <p class="text-sm text-slate-600 mb-3 leading-relaxed">
+                                Greenpeace ranks Australian retailers by their <span class="text-slate-900 font-semibold">Renewable Investment</span> and <span class="text-slate-900 font-semibold">Fossil Fuel Expansion halts</span>.
+                            </p>
+                            <div class="flex flex-wrap gap-4 text-xs">
+                                <span class="bg-emerald-50 text-emerald-700 px-2 py-1 rounded border border-emerald-100"><strong>Pure-Play:</strong> 100% Renewables</span>
+                                <span class="bg-emerald-50 text-emerald-700 px-2 py-1 rounded border border-emerald-100"><strong>No Extraction:</strong> Zero coal/gas ownership</span>
+                            </div>
+                        </div>
+                        <div class="bg-slate-900 text-white p-6 rounded-lg shadow-sm border-t-4 border-emerald-500">
+                            <h4 class="font-bold text-emerald-400 text-xs mb-2 uppercase tracking-widest">The Auditor's View</h4>
+                            <p class="text-xs text-slate-300 leading-relaxed">
+                                <strong>The "Big Three"</strong> dominate with "Carbon Neutral" plans while owning the coal infrastructure that produces the power.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+                    <!-- Top Greenest -->
+                    <div class="bg-white border border-slate-200 shadow-sm rounded-sm overflow-hidden">
+                        <div class="bg-emerald-600 p-3 text-white border-b border-slate-200 text-center">
+                            <h4 class="font-extrabold text-sm uppercase tracking-tight">Greenest Retailers (Top 10)</h4>
+                        </div>
+                        <div class="bg-white">
+                            <div class="ledger-list-item font-bold bg-slate-50 text-[11px] uppercase text-slate-400">
+                                <span>Retailer</span>
+                                <span>Rating</span>
+                            </div>
+                            <div class="ledger-list-item"><div class="item-name"><span class="item-rank">1.</span> Diamond Energy <div class="star-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div></div><span class="item-score score-high">10/10</span></div>
+                            <div class="ledger-list-item"><div class="item-name"><span class="item-rank">2.</span> Momentum Energy <div class="star-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div></div><span class="item-score score-high">8.6/10</span></div>
+                            <div class="ledger-list-item"><div class="item-name"><span class="item-rank">3.</span> Aurora Energy <div class="star-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div></div><span class="item-score score-high">8.1/10</span></div>
+                            <div class="ledger-list-item"><div class="item-name"><span class="item-rank">4.</span> Energy Locals <div class="star-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div></div><span class="item-score score-high">8.1/10</span></div>
+                            <div class="ledger-list-item"><div class="item-name"><span class="item-rank">5.</span> Indigo Power <div class="star-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div></div><span class="item-score score-high">7.9/10</span></div>
+                            <div class="ledger-list-item"><div class="item-name"><span class="item-rank">6.</span> Nectr <div class="star-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div></div><span class="item-score score-high">7.8/10</span></div>
+                            <div class="ledger-list-item"><div class="item-name"><span class="item-rank">7.</span> CoPower <div class="star-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div></div><span class="item-score score-high">7.5/10</span></div>
+                            <div class="ledger-list-item"><div class="item-name"><span class="item-rank">8.</span> Amber Electric <div class="star-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div></div><span class="item-score score-high">7.4/10</span></div>
+                            <div class="ledger-list-item"><div class="item-name"><span class="item-rank">9.</span> Enova Energy <div class="star-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div></div><span class="item-score score-high">7.2/10</span></div>
+                            <div class="ledger-list-item"><div class="item-name"><span class="item-rank">10.</span> GEE Energy <div class="star-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></div></div><span class="item-score score-high">7.0/10</span></div>
+                        </div>
+                    </div>
+
+                    <!-- Biggest Polluters -->
+                    <div class="bg-white border border-slate-200 shadow-sm rounded-sm overflow-hidden">
+                        <div class="bg-slate-900 p-3 text-white border-b border-slate-200 text-center">
+                            <h4 class="font-extrabold text-sm uppercase tracking-tight">The "Big Three" & Dirtiest 10</h4>
+                        </div>
+                        <div class="bg-white">
+                            <div class="ledger-list-item font-bold bg-slate-50 text-[11px] uppercase text-slate-400">
+                                <span>Retailer</span>
+                                <span>Rating</span>
+                            </div>
+                            <div class="ledger-list-item"><div class="item-name">Origin Energy*</div><span class="item-score score-low">16%</span></div>
+                            <div class="ledger-list-item"><div class="item-name">EnergyAustralia*</div><span class="item-score score-low">14%</span></div>
+                            <div class="ledger-list-item"><div class="item-name">Powerdirect*</div><span class="item-score score-low">13%</span></div>
+                            <div class="ledger-list-item"><div class="item-name">ActewAGL</div><span class="item-score score-low">12%</span></div>
+                            <div class="ledger-list-item"><div class="item-name">AGL Energy</div><span class="item-score score-low">12%</span></div>
+                            <div class="ledger-list-item"><div class="item-name">Simply Energy</div><span class="item-score score-low">11%</span></div>
+                            <div class="ledger-list-item"><div class="item-name">Alinta Energy</div><span class="item-score score-low">11%</span></div>
+                            <div class="ledger-list-item"><div class="item-name">Lumo Energy</div><span class="item-score score-low">10%</span></div>
+                            <div class="ledger-list-item"><div class="item-name">Red Energy</div><span class="item-score score-low">10%</span></div>
+                            <div class="ledger-list-item"><div class="item-name">Delta Electricity</div><span class="item-score score-low">8%</span></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- SECTION: Cars -->
             <section id="cars" class="category-section mb-24 scroll-mt-48">
                 <div class="mb-8">
-                    <h3 class="text-emerald-600 font-bold text-lg mb-4">
+                    <h2 class="text-slate-400 font-bold text-sm uppercase tracking-[0.2em] mb-2">Cars</h2>
+                    <h3 class="text-slate-900 font-extrabold text-3xl mb-4">
                         Tailpipe Carbon Rankings (Australia)
                     </h3>
                     <div class="bg-white border-l-4 border-emerald-500 p-6 shadow-sm rounded-r-lg max-w-2xl">
-                        <h4 class="font-bold text-slate-900 mb-1">What is g/km?</h4>
-                        <p class="text-sm text-slate-600 mb-3 leading-relaxed">
-                            This is the <span class="font-bold text-slate-900">Carbon Cost</span> of your car. It measures how many grams of CO2 come out of the tailpipe for every single kilometre you drive.
-                        </p>
+                        <h4 class="font-bold text-slate-900 mb-1">Impact Metric: g/km</h4>
                         <p class="text-sm text-slate-600 leading-relaxed">
-                            Lower is better. While EVs emit 0g at the tailpipe, a typical luxury V8 or heavy utility vehicle can exceed 300g per kilometre.
+                            Lower is better. While EVs emit 0g at the tailpipe, typical heavy utility vehicles often exceed 200g per kilometre.
                         </p>
                     </div>
                 </div>
 
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                    <!-- Column 1: Top CO2 performing vehicles -->
+                    <!-- Top CO2 Performers -->
                     <div class="bg-white border border-slate-200 shadow-sm rounded-sm">
-                        <div class="bg-[#00f2c3] p-3 flex justify-between items-center text-slate-900 border-b border-slate-200">
-                            <div class="flex-1 text-center">
-                                <h4 class="font-extrabold text-sm uppercase tracking-tight">Top CO2 performing vehicles</h4>
-                            </div>
+                        <div class="bg-[#00f2c3] p-3 text-slate-900 border-b border-slate-200 text-center">
+                            <h4 class="font-extrabold text-sm uppercase tracking-tight">Top CO2 performing vehicles</h4>
                         </div>
-                        
                         <div class="grid grid-cols-2 bg-white">
                             <div class="border-r border-slate-100">
-                                <div class="car-list-item font-bold bg-slate-50 text-[11px] uppercase text-slate-400">
-                                    <span>Model</span>
-                                    <span>CO2 Impact</span>
-                                </div>
-                                <div class="car-list-item"><div class="car-name"><span class="car-rank">1.</span> Tesla Model 3</div> <span class="car-stat">0g</span></div>
-                                <div class="car-list-item"><div class="car-name"><span class="car-rank">2.</span> BYD DOLPHIN</div> <span class="car-stat">0g</span></div>
-                                <div class="car-list-item"><div class="car-name"><span class="car-rank">3.</span> Lexus UX 300e</div> <span class="car-stat">0g</span></div>
-                                <div class="car-list-item"><div class="car-name"><span class="car-rank">4.</span> MG MG4</div> <span class="car-stat">0g</span></div>
-                                <div class="car-list-item"><div class="car-name"><span class="car-rank">5.</span> Chery E5</div> <span class="car-stat">0g</span></div>
-                                <div class="car-list-item"><div class="car-name"><span class="car-rank">6.</span> Toyota bZ4X</div> <span class="car-stat">0g</span></div>
-                                <div class="car-list-item"><div class="car-name"><span class="car-rank">7.</span> BYD SEAL</div> <span class="car-stat">0g</span></div>
-                                <div class="car-list-item"><div class="car-name"><span class="car-rank">8.</span> MINI JCW Hatch</div> <span class="car-stat">0g</span></div>
-                                <div class="car-list-item"><div class="car-name"><span class="car-rank">9.</span> Leapmotor B10</div> <span class="car-stat">0g</span></div>
-                                <div class="car-list-item"><div class="car-name"><span class="car-rank">10.</span> Mercedes EQA</div> <span class="car-stat">0g</span></div>
+                                <div class="ledger-list-item font-bold bg-slate-50 text-[11px] uppercase text-slate-400"><span>Model</span><span>Impact</span></div>
+                                <div class="ledger-list-item"><div class="item-name"><span class="item-rank">1.</span> Tesla Model 3</div><span class="item-score score-high">0g</span></div>
+                                <div class="ledger-list-item"><div class="item-name"><span class="item-rank">2.</span> BYD DOLPHIN</div><span class="item-score score-high">0g</span></div>
+                                <div class="ledger-list-item"><div class="item-name"><span class="item-rank">3.</span> Lexus UX 300e</div><span class="item-score score-high">0g</span></div>
+                                <div class="ledger-list-item"><div class="item-name"><span class="item-rank">4.</span> MG MG4</div><span class="item-score score-high">0g</span></div>
+                                <div class="ledger-list-item"><div class="item-name"><span class="item-rank">5.</span> Chery E5</div><span class="item-score score-high">0g</span></div>
                             </div>
                             <div>
-                                <div class="car-list-item font-bold bg-slate-50 text-[11px] uppercase text-slate-400">
-                                    <span>Model</span>
-                                    <span>CO2 Impact</span>
-                                </div>
-                                <div class="car-list-item"><div class="car-name"><span class="car-rank">11.</span> Subaru Solterra</div> <span class="car-stat">0g</span></div>
-                                <div class="car-list-item"><div class="car-name"><span class="car-rank">12.</span> MINI JCW Aceman</div> <span class="car-stat">0g</span></div>
-                                <div class="car-list-item"><div class="car-name"><span class="car-rank">13.</span> Hyundai IONIQ 6</div> <span class="car-stat">0g</span></div>
-                                <div class="car-list-item"><div class="car-name"><span class="car-rank">14.</span> Hyundai INSTER</div> <span class="car-stat">0g</span></div>
-                                <div class="car-list-item"><div class="car-name"><span class="car-rank">15.</span> Fiat 500e</div> <span class="car-stat">0g</span></div>
-                                <div class="car-list-item"><div class="car-name"><span class="car-rank">16.</span> Mercedes EQB</div> <span class="car-stat">0g</span></div>
-                                <div class="car-list-item"><div class="car-name"><span class="car-rank">17.</span> BYD ATTO 3</div> <span class="car-stat">0g</span></div>
-                                <div class="car-list-item"><div class="car-name"><span class="car-rank">18.</span> Kia EV3</div> <span class="car-stat">0g</span></div>
-                                <div class="car-list-item"><div class="car-name"><span class="car-rank">19.</span> Lexus RZ 450e</div> <span class="car-stat">0g</span></div>
-                                <div class="car-list-item"><div class="car-name"><span class="car-rank">20.</span> Alfa Junior</div> <span class="car-stat">0g</span></div>
+                                <div class="ledger-list-item font-bold bg-slate-50 text-[11px] uppercase text-slate-400"><span>Model</span><span>Impact</span></div>
+                                <div class="ledger-list-item"><div class="item-name"><span class="item-rank">6.</span> Toyota bZ4X</div><span class="item-score score-high">0g</span></div>
+                                <div class="ledger-list-item"><div class="item-name"><span class="item-rank">7.</span> BYD SEAL</div><span class="item-score score-high">0g</span></div>
+                                <div class="ledger-list-item"><div class="item-name"><span class="item-rank">8.</span> MINI Hatch</div><span class="item-score score-high">0g</span></div>
+                                <div class="ledger-list-item"><div class="item-name"><span class="item-rank">9.</span> Leapmotor</div><span class="item-score score-high">0g</span></div>
+                                <div class="ledger-list-item"><div class="item-name"><span class="item-rank">10.</span> Merc EQA</div><span class="item-score score-high">0g</span></div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Column 2: Top sellers -->
+                    <!-- Top Sellers -->
                     <div class="bg-white border border-slate-200 shadow-sm rounded-sm">
-                        <div class="bg-[#00e5ff] p-3 flex justify-between items-center text-slate-900 border-b border-slate-200">
-                            <div class="flex-1 text-center">
-                                <h4 class="font-extrabold text-sm uppercase tracking-tight">Top Sellers (Tailpipe Carbon)</h4>
-                            </div>
+                        <div class="bg-[#00e5ff] p-3 text-slate-900 border-b border-slate-200 text-center">
+                            <h4 class="font-extrabold text-sm uppercase tracking-tight">Top Sellers (Tailpipe Carbon)</h4>
                         </div>
-                        
                         <div class="grid grid-cols-2 bg-white">
                             <div class="border-r border-slate-100">
-                                <div class="car-list-item font-bold bg-slate-50 text-[11px] uppercase text-slate-400">
-                                    <span>Model</span>
-                                    <span>CO2 Impact</span>
-                                </div>
-                                <div class="car-list-item"><div class="car-name"><span class="car-rank">1.</span> Ford Ranger</div> <span class="car-stat">202g</span></div>
-                                <div class="car-list-item"><div class="car-name"><span class="car-rank">2.</span> Toyota RAV4</div> <span class="car-stat">107g</span></div>
-                                <div class="car-list-item"><div class="car-name"><span class="car-rank">3.</span> Toyota Hilux</div> <span class="car-stat">208g</span></div>
-                                <div class="car-list-item"><div class="car-name"><span class="car-rank">4.</span> Toyota Prado</div> <span class="car-stat">216g</span></div>
-                                <div class="car-list-item"><div class="car-name"><span class="car-rank">5.</span> Ford Everest</div> <span class="car-stat">199g</span></div>
-                                <div class="car-list-item"><div class="car-name"><span class="car-rank">6.</span> Hyundai Kona</div> <span class="car-stat">145g</span></div>
-                                <div class="car-list-item"><div class="car-name"><span class="car-rank">7.</span> Mazda CX-5</span></div> <span class="car-stat">161g</span></div>
-                                <div class="car-list-item"><div class="car-name"><span class="car-rank">8.</span> Mitsu Outlander</div> <span class="car-stat">154g</span></div>
-                                <div class="car-list-item"><div class="car-name"><span class="car-rank">9.</span> Tesla Model Y</div> <span class="car-stat">0g</span></div>
-                                <div class="car-list-item"><div class="car-name"><span class="car-rank">10.</span> Isuzu D-MAX</div> <span class="car-stat">212g</span></div>
+                                <div class="ledger-list-item font-bold bg-slate-50 text-[11px] uppercase text-slate-400"><span>Model</span><span>Impact</span></div>
+                                <div class="ledger-list-item"><div class="item-name">Ford Ranger</div><span class="item-score score-low">202g</span></div>
+                                <div class="ledger-list-item"><div class="item-name">Toyota RAV4</div><span class="item-score score-mid">107g</span></div>
+                                <div class="ledger-list-item"><div class="item-name">Toyota Hilux</div><span class="item-score score-low">208g</span></div>
+                                <div class="ledger-list-item"><div class="item-name">Toyota Prado</div><span class="item-score score-low">216g</span></div>
+                                <div class="ledger-list-item"><div class="item-name">Ford Everest</div><span class="item-score score-low">199g</span></div>
                             </div>
                             <div>
-                                <div class="car-list-item font-bold bg-slate-50 text-[11px] uppercase text-slate-400">
-                                    <span>Model</span>
-                                    <span>CO2 Impact</span>
-                                </div>
-                                <div class="car-list-item"><div class="car-name"><span class="car-rank">11.</span> Chery Tiggo 4</div> <span class="car-stat">165g</span></div>
-                                <div class="car-list-item"><div class="car-name"><span class="car-rank">12.</span> Hyundai Tucson</div> <span class="car-stat">164g</span></div>
-                                <div class="car-list-item"><div class="car-name"><span class="car-rank">13.</span> MG ZS</div> <span class="car-stat">162g</span></div>
-                                <div class="car-list-item"><div class="car-name"><span class="car-rank">14.</span> Haval Jolion</div> <span class="car-stat">151g</span></div>
-                                <div class="car-list-item"><div class="car-name"><span class="car-rank">15.</span> Kia Sportage</div> <span class="car-stat">163g</span></div>
-                                <div class="car-list-item"><div class="car-name"><span class="car-rank">16.</span> Toyota Corolla</div> <span class="car-stat">91g</span></div>
-                                <div class="car-list-item"><div class="car-name"><span class="car-rank">17.</span> BYD SHARK 6</div> <span class="car-stat">152g</span></div>
-                                <div class="car-list-item"><div class="car-name"><span class="car-rank">18.</span> Mitsu Triton</div> <span class="car-stat">210g</span></div>
-                                <div class="car-list-item"><div class="car-name"><span class="car-rank">19.</span> Nissan X-Trail</div> <span class="car-stat">155g</span></div>
-                                <div class="car-list-item"><div class="car-name"><span class="car-rank">20.</span> Isuzu MU-X</div> <span class="car-stat">214g</span></div>
+                                <div class="ledger-list-item font-bold bg-slate-50 text-[11px] uppercase text-slate-400"><span>Model</span><span>Impact</span></div>
+                                <div class="ledger-list-item"><div class="item-name">Hyundai Kona</div><span class="item-score score-mid">145g</span></div>
+                                <div class="ledger-list-item"><div class="item-name">Mazda CX-5</div><span class="item-score score-mid">161g</span></div>
+                                <div class="ledger-list-item"><div class="item-name">Mitsu Outlander</div><span class="item-score score-mid">154g</span></div>
+                                <div class="ledger-list-item"><div class="item-name">Tesla Model Y</div><span class="item-score score-high">0g</span></div>
+                                <div class="ledger-list-item"><div class="item-name">Isuzu D-MAX</div><span class="item-score score-low">212g</span></div>
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <!-- Biggest Polluters Section -->
-                <div class="mt-8 max-w-2xl mx-auto">
-                    <div class="bg-white border border-slate-200 shadow-sm rounded-sm">
-                        <div class="bg-[#ff4d4d] p-3 flex justify-between items-center text-white border-b border-slate-200">
-                            <div class="flex-1 text-center">
-                                <h4 class="font-extrabold text-sm uppercase tracking-tight">Biggest Polluters (Worst Performers)</h4>
-                            </div>
-                        </div>
-                        <div class="bg-white">
-                            <div class="car-list-item font-bold bg-slate-50 text-[11px] uppercase text-slate-400">
-                                <span>Model</span>
-                                <span>CO2 Impact</span>
-                            </div>
-                            <div class="car-list-item"><div class="car-name"><span class="car-rank">1.</span> Chevrolet Silverado 1500</div> <span class="car-stat car-stat-danger">390g</span></div>
-                            <div class="car-list-item"><div class="car-name"><span class="car-rank">2.</span> RAM 1500 (Hemi V8)</div> <span class="car-stat car-stat-danger">362g</span></div>
-                            <div class="car-list-item"><div class="car-name"><span class="car-rank">3.</span> Nissan Patrol (V8)</div> <span class="car-stat car-stat-danger">334g</span></div>
-                            <div class="car-list-item"><div class="car-name"><span class="car-rank">4.</span> RAM 2500 / 3500</div> <span class="car-stat car-stat-danger">322g</span></div>
-                            <div class="car-list-item"><div class="car-name"><span class="car-rank">5.</span> Toyota LandCruiser 70 (V8)</div> <span class="car-stat car-stat-danger">281g</span></div>
-                            <div class="car-list-item"><div class="car-name"><span class="car-rank">6.</span> Jeep Gladiator</div> <span class="car-stat car-stat-danger">274g</span></div>
-                            <div class="car-list-item"><div class="car-name"><span class="car-rank">7.</span> Land Rover Defender V8</div> <span class="car-stat car-stat-danger">268g</span></div>
-                            <div class="car-list-item"><div class="car-name"><span class="car-rank">8.</span> Toyota LandCruiser 300</div> <span class="car-stat car-stat-danger">235g</span></div>
-                            <div class="car-list-item"><div class="car-name"><span class="car-rank">9.</span> Volkswagen Amarok V6</div> <span class="car-stat car-stat-danger">222g</span></div>
-                            <div class="car-list-item"><div class="car-name"><span class="car-rank">10.</span> Toyota Prado (Diesel)</div> <span class="car-stat car-stat-danger">216g</span></div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="mt-6 text-center">
-                    <p class="text-[11px] text-slate-400 font-medium italic">Average g/km based on combined cycle testing for Australian variants.</p>
                 </div>
             </section>
 
-            <!-- Travel Section -->
-            <section id="travel" class="category-section mb-24 scroll-mt-48">
+            <!-- SECTION: Connectivity -->
+            <section id="connectivity" class="category-section mb-24 scroll-mt-48">
                 <div class="mb-8">
-                    <h3 class="text-emerald-600 font-bold text-lg mb-4">
-                        Sustainable Travel Options
+                    <h2 class="text-slate-400 font-bold text-sm uppercase tracking-[0.2em] mb-2">Phones & Internet</h2>
+                    <h3 class="text-slate-900 font-extrabold text-3xl mb-4">
+                        Australian Connectivity Auditor
                     </h3>
                     <div class="bg-white border-l-4 border-emerald-500 p-6 shadow-sm rounded-r-lg max-w-2xl">
-                        <h4 class="font-bold text-slate-900 mb-1">Travel Impact</h4>
+                        <h4 class="font-bold text-slate-900 mb-1">Infrastructure Footprint</h4>
                         <p class="text-sm text-slate-600 leading-relaxed">
-                            How we move from A to B matters. Explore rankings for airlines, public transport, and carbon-neutral travel providers.
+                            Connectivity depends on massive data centers and tower networks. We audit providers based on their commitment to <span class="text-slate-900 font-semibold">renewable grid power</span> and <span class="text-slate-900 font-semibold">e-waste recycling</span>.
                         </p>
                     </div>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div class="bg-white p-8 border border-slate-200 rounded-sm text-center">
-                        <i class="fas fa-plane-departure text-slate-300 text-4xl mb-4"></i>
-                        <p class="text-slate-500 text-sm">Aviation Impact Rankings Coming Soon</p>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <!-- Top Greenest Connectivity -->
+                    <div class="bg-white border border-slate-200 shadow-sm rounded-sm overflow-hidden">
+                        <div class="bg-emerald-600 p-3 text-white border-b border-slate-200 text-center">
+                            <h4 class="font-extrabold text-sm uppercase tracking-tight">Ethical Leaders (Top 10)</h4>
+                        </div>
+                        <div class="bg-white">
+                            <div class="ledger-list-item font-bold bg-slate-50 text-[11px] uppercase text-slate-400">
+                                <span>Provider</span>
+                                <span>Status</span>
+                            </div>
+                            <div class="ledger-list-item"><div class="item-name"><span class="item-rank">1.</span> Belong (Mobile/NBN)</div><span class="item-score score-high">Certified</span></div>
+                            <div class="ledger-list-item"><div class="item-name"><span class="item-rank">2.</span> Felix Mobile</div><span class="item-score score-high">Certified</span></div>
+                            <div class="ledger-list-item"><div class="item-name"><span class="item-rank">3.</span> Tangerine</div><span class="item-score score-high">B-Corp</span></div>
+                            <div class="ledger-list-item"><div class="item-name"><span class="item-rank">4.</span> Moose Mobile</div><span class="item-score score-high">Eco-Badge</span></div>
+                            <div class="ledger-list-item"><div class="item-name"><span class="item-rank">5.</span> More Telecom</div><span class="item-score score-mid">Audit Pnd</span></div>
+                            <div class="ledger-list-item"><div class="item-name"><span class="item-rank">6.</span> Pennytel</div><span class="item-score score-mid">Audit Pnd</span></div>
+                            <div class="ledger-list-item"><div class="item-name"><span class="item-rank">7.</span> Exetel</div><span class="item-score score-mid">Audit Pnd</span></div>
+                            <div class="ledger-list-item"><div class="item-name"><span class="item-rank">8.</span> Southern Phone</div><span class="item-score score-mid">Audit Pnd</span></div>
+                            <div class="ledger-list-item"><div class="item-name"><span class="item-rank">9.</span> Mate</div><span class="item-score score-mid">Audit Pnd</span></div>
+                            <div class="ledger-list-item"><div class="item-name"><span class="item-rank">10.</span> Lebara</div><span class="item-score score-mid">Audit Pnd</span></div>
+                        </div>
                     </div>
-                    <div class="bg-white p-8 border border-slate-200 rounded-sm text-center">
-                        <i class="fas fa-train text-slate-300 text-4xl mb-4"></i>
-                        <p class="text-slate-500 text-sm">Public Transport Efficiency Guide Coming Soon</p>
+
+                    <!-- Market Giants Accountability -->
+                    <div class="bg-white border border-slate-200 shadow-sm rounded-sm overflow-hidden">
+                        <div class="bg-slate-900 p-3 text-white border-b border-slate-200 text-center">
+                            <h4 class="font-extrabold text-sm uppercase tracking-tight">Market Giants Transparency</h4>
+                        </div>
+                        <div class="bg-white">
+                            <div class="ledger-list-item font-bold bg-slate-50 text-[11px] uppercase text-slate-400">
+                                <span>Brand</span>
+                                <span>Audit Note</span>
+                            </div>
+                            <div class="ledger-list-item">
+                                <div class="item-name">Telstra</div>
+                                <span class="text-[11px] font-bold text-emerald-600">Net Zero Commit</span>
+                            </div>
+                            <div class="ledger-list-item">
+                                <div class="item-name">Optus</div>
+                                <span class="text-[11px] font-bold text-amber-600">Renewable Target 2025</span>
+                            </div>
+                            <div class="ledger-list-item">
+                                <div class="item-name">TPG / Vodafone</div>
+                                <span class="text-[11px] font-bold text-amber-600">Renewable Target 2025</span>
+                            </div>
+                            <div class="ledger-list-item">
+                                <div class="item-name">Aussie Broadband</div>
+                                <span class="text-[11px] font-bold text-slate-400">ESG Reporting Active</span>
+                            </div>
+                        </div>
+                        <div class="p-6 bg-slate-50 text-center border-t border-slate-100">
+                             <p class="text-xs text-slate-500 italic">"Digital carbon is the invisible polluter. Choosing a provider that offsets network energy use is the primary auditor requirement."</p>
+                        </div>
                     </div>
+                </div>
+            </section>
+
+            <!-- SECTION: Superannuation -->
+            <section id="super" class="category-section mb-24 scroll-mt-48">
+                <div class="mb-8">
+                    <h2 class="text-slate-400 font-bold text-sm uppercase tracking-[0.2em] mb-2">Superannuation</h2>
+                    <h3 class="text-slate-900 font-extrabold text-3xl mb-4">
+                        Ethical Investment Guide
+                    </h3>
+                    <div class="bg-white border-l-4 border-emerald-500 p-6 shadow-sm rounded-r-lg max-w-2xl">
+                        <p class="text-sm text-slate-600 leading-relaxed">
+                            Auditing where your retirement savings are actually invested. Fossil fuel divestment scores for major Australian funds.
+                        </p>
+                    </div>
+                </div>
+                <div class="bg-white p-12 border border-slate-200 rounded-sm text-center">
+                    <i class="fas fa-piggy-bank text-slate-300 text-4xl mb-4"></i>
+                    <p class="text-slate-500 text-sm">Superannuation Auditor Database Launching Next Month</p>
                 </div>
             </section>
 
