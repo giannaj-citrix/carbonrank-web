@@ -385,13 +385,77 @@
                     </h3>
                     <div class="bg-white border-l-4 border-emerald-500 p-6 shadow-sm rounded-r-lg max-w-2xl">
                         <p class="text-sm text-slate-600 leading-relaxed">
-                            Auditing where your retirement savings are actually invested. Fossil fuel divestment scores for major Australian funds.
+                            Auditing where your retirement savings are actually invested. We track <span class="text-slate-900 font-semibold">fossil fuel divestment</span> and <span class="text-slate-900 font-semibold">positive impact investment</span> ratios.
                         </p>
                     </div>
                 </div>
-                <div class="bg-white p-12 border border-slate-200 rounded-sm text-center">
-                    <i class="fas fa-piggy-bank text-slate-300 text-4xl mb-4"></i>
-                    <p class="text-slate-500 text-sm">Superannuation Auditor Database Launching Next Month</p>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+                    <!-- Top Ethical Funds -->
+                    <div class="bg-white border border-slate-200 shadow-sm rounded-sm overflow-hidden">
+                        <div class="bg-emerald-600 p-3 text-white border-b border-slate-200 text-center">
+                            <h4 class="font-extrabold text-sm uppercase tracking-tight">Top 10 Green Investment Funds</h4>
+                        </div>
+                        <div class="bg-white">
+                            <div class="ledger-list-item font-bold bg-slate-50 text-[11px] uppercase text-slate-400">
+                                <span>Fund Name</span>
+                                <span>Audit Rating</span>
+                            </div>
+                            <div class="ledger-list-item"><div class="item-name"><span class="item-rank">1.</span> Australian Ethical <div class="star-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div></div><span class="item-score score-high">A+</span></div>
+                            <div class="ledger-list-item"><div class="item-name"><span class="item-rank">2.</span> Future Super <div class="star-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div></div><span class="item-score score-high">A+</span></div>
+                            <div class="ledger-list-item"><div class="item-name"><span class="item-rank">3.</span> Verve Super <div class="star-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div></div><span class="item-score score-high">A</span></div>
+                            <div class="ledger-list-item"><div class="item-name"><span class="item-rank">4.</span> HESTA (Eco Pool) <div class="star-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div></div><span class="item-score score-high">A-</span></div>
+                            <div class="ledger-list-item"><div class="item-name"><span class="item-rank">5.</span> UniSuper <div class="star-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div></div><span class="item-score score-high">B+</span></div>
+                            <div class="ledger-list-item"><div class="item-name"><span class="item-rank">6.</span> Aware Super <div class="star-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div></div><span class="item-score score-high">B+</span></div>
+                            <div class="ledger-list-item"><div class="item-name"><span class="item-rank">7.</span> AustralianSuper <div class="star-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></div></div><span class="item-score score-mid">B</span></div>
+                            <div class="ledger-list-item"><div class="item-name"><span class="item-rank">8.</span> Rest Super <div class="star-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></div></div><span class="item-score score-mid">B-</span></div>
+                            <div class="ledger-list-item"><div class="item-name"><span class="item-rank">9.</span> Cbus Super <div class="star-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></div></div><span class="item-score score-mid">C+</span></div>
+                            <div class="ledger-list-item"><div class="item-name"><span class="item-rank">10.</span> Hostplus <div class="star-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></div></div><span class="item-score score-mid">C</span></div>
+                        </div>
+                    </div>
+
+                    <!-- Worst Ethical Funds -->
+                    <div class="bg-white border border-slate-200 shadow-sm rounded-sm overflow-hidden">
+                        <div class="bg-slate-900 p-3 text-white border-b border-slate-200 text-center">
+                            <h4 class="font-extrabold text-sm uppercase tracking-tight">Worst 10: High Fossil Fuel Exposure</h4>
+                        </div>
+                        <div class="bg-white">
+                            <div class="ledger-list-item font-bold bg-slate-50 text-[11px] uppercase text-slate-400">
+                                <span>Fund Name</span>
+                                <span>Exposure %</span>
+                            </div>
+                            <div class="ledger-list-item"><div class="item-name"><span class="item-rank">1.</span> Commonwealth Super (PSSap)</div><span class="item-score score-low">12.1%</span></div>
+                            <div class="ledger-list-item"><div class="item-name"><span class="item-rank">2.</span> Westpac (BT Super)</div><span class="item-score score-low">11.8%</span></div>
+                            <div class="ledger-list-item"><div class="item-name"><span class="item-rank">3.</span> AMP MySuper</div><span class="item-score score-low">11.2%</span></div>
+                            <div class="ledger-list-item"><div class="item-name"><span class="item-rank">4.</span> MLC MySuper</div><span class="item-score score-low">10.9%</span></div>
+                            <div class="ledger-list-item"><div class="item-name"><span class="item-rank">5.</span> Colonial First State</div><span class="item-score score-low">10.4%</span></div>
+                            <div class="ledger-list-item"><div class="item-name"><span class="item-rank">6.</span> Mercer Super</div><span class="item-score score-low">9.8%</span></div>
+                            <div class="ledger-list-item"><div class="item-name"><span class="item-rank">7.</span> Suncorp Super</div><span class="item-score score-low">9.2%</span></div>
+                            <div class="ledger-list-item"><div class="item-name"><span class="item-rank">8.</span> ANZ (Smart Choice)</div><span class="item-score score-low">8.9%</span></div>
+                            <div class="ledger-list-item"><div class="item-name"><span class="item-rank">9.</span> IOOF MySuper</div><span class="item-score score-low">8.5%</span></div>
+                            <div class="ledger-list-item"><div class="item-name"><span class="item-rank">10.</span> Vanguard Super</div><span class="item-score score-low">8.1%</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Market Insights Row -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div class="bg-slate-900 text-white p-8 rounded-sm shadow-sm border-t-4 border-emerald-500 flex flex-col justify-center">
+                        <h4 class="font-bold text-emerald-400 text-xs mb-4 uppercase tracking-widest">Auditor's Divestment Alert</h4>
+                        <p class="text-sm text-slate-300 leading-relaxed mb-4">
+                            Most "Default" options in major industry funds still hold up to <span class="text-white font-bold">7-12% exposure</span> to fossil fuel extraction companies despite net-zero marketing.
+                        </p>
+                        <div class="p-4 bg-slate-800 rounded text-[11px] border border-slate-700">
+                            <i class="fas fa-info-circle text-emerald-500 mr-2"></i>
+                            Switching to a "Sustainable" or "Socially Responsible" option within your current fund often reduces carbon intensity by over 60%.
+                        </div>
+                    </div>
+                    <div class="bg-white p-8 border border-slate-200 rounded-sm flex flex-col justify-center text-center">
+                        <p class="text-slate-700 text-[13px] leading-relaxed italic">
+                            <span class="text-emerald-600 font-bold uppercase not-italic block mb-2 tracking-wider text-xs">The Green Ledger Note</span>
+                            "As the 'Corporate Auditor,' we don't just take a company's word for it. If a company claims to be 'Carbon Neutral' through offsets but is still investing in new coal mines (the 'Greenwashing' filter), our database reflects their actual impact rather than their marketing spend."
+                        </p>
+                    </div>
                 </div>
             </section>
 
