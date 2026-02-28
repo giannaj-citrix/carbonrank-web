@@ -92,6 +92,10 @@
             min-width: 45px;
             text-align: center;
         }
+        .car-stat-danger {
+            color: #ef4444;
+            background: #fef2f2;
+        }
     </style>
 </head>
 <body class="bg-[#fcfdfc] text-slate-900">
@@ -139,7 +143,8 @@
     <div class="sticky top-20 z-40 bg-white border-b border-slate-100 overflow-x-auto category-nav">
         <div id="category-nav-links" class="max-w-7xl mx-auto px-6 py-4 flex space-x-12 whitespace-nowrap text-[15px] font-bold">
             <a href="#energy" class="nav-link transition">Electricity & Gas</a>
-            <a href="#cars" class="nav-link active transition">Travel & Cars</a>
+            <a href="#cars" class="nav-link active transition">Cars</a>
+            <a href="#travel" class="nav-link transition">Travel</a>
             <a href="#scorecard" class="nav-link transition">Scorecard Rating</a>
             <a href="#connectivity" class="nav-link transition">Phone & Internet</a>
         </div>
@@ -152,7 +157,7 @@
             <section id="cars" class="category-section mb-24 scroll-mt-48">
                 <div class="mb-8">
                     <h3 class="text-emerald-600 font-bold text-lg mb-4">
-                        Top 20 performers and sellers in Australia
+                        Tailpipe Carbon Rankings (Australia)
                     </h3>
                     <div class="bg-white border-l-4 border-emerald-500 p-6 shadow-sm rounded-r-lg max-w-2xl">
                         <h4 class="font-bold text-slate-900 mb-1">What is g/km?</h4>
@@ -160,12 +165,12 @@
                             This is the <span class="font-bold text-slate-900">Carbon Cost</span> of your car. It measures how many grams of CO2 come out of the tailpipe for every single kilometre you drive.
                         </p>
                         <p class="text-sm text-slate-600 leading-relaxed">
-                            Lower is better. A typical 4x4 (200g+) creates twice the impact of a small hybrid (~100g).
+                            Lower is better. While EVs emit 0g at the tailpipe, a typical luxury V8 or heavy utility vehicle can exceed 300g per kilometre.
                         </p>
                     </div>
                 </div>
 
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
                     <!-- Column 1: Top CO2 performing vehicles -->
                     <div class="bg-white border border-slate-200 shadow-sm rounded-sm">
                         <div class="bg-[#00f2c3] p-3 flex justify-between items-center text-slate-900 border-b border-slate-200">
@@ -176,6 +181,10 @@
                         
                         <div class="grid grid-cols-2 bg-white">
                             <div class="border-r border-slate-100">
+                                <div class="car-list-item font-bold bg-slate-50 text-[11px] uppercase text-slate-400">
+                                    <span>Model</span>
+                                    <span>CO2 Impact</span>
+                                </div>
                                 <div class="car-list-item"><div class="car-name"><span class="car-rank">1.</span> Tesla Model 3</div> <span class="car-stat">0g</span></div>
                                 <div class="car-list-item"><div class="car-name"><span class="car-rank">2.</span> BYD DOLPHIN</div> <span class="car-stat">0g</span></div>
                                 <div class="car-list-item"><div class="car-name"><span class="car-rank">3.</span> Lexus UX 300e</div> <span class="car-stat">0g</span></div>
@@ -188,6 +197,10 @@
                                 <div class="car-list-item"><div class="car-name"><span class="car-rank">10.</span> Mercedes EQA</div> <span class="car-stat">0g</span></div>
                             </div>
                             <div>
+                                <div class="car-list-item font-bold bg-slate-50 text-[11px] uppercase text-slate-400">
+                                    <span>Model</span>
+                                    <span>CO2 Impact</span>
+                                </div>
                                 <div class="car-list-item"><div class="car-name"><span class="car-rank">11.</span> Subaru Solterra</div> <span class="car-stat">0g</span></div>
                                 <div class="car-list-item"><div class="car-name"><span class="car-rank">12.</span> MINI JCW Aceman</div> <span class="car-stat">0g</span></div>
                                 <div class="car-list-item"><div class="car-name"><span class="car-rank">13.</span> Hyundai IONIQ 6</div> <span class="car-stat">0g</span></div>
@@ -212,6 +225,10 @@
                         
                         <div class="grid grid-cols-2 bg-white">
                             <div class="border-r border-slate-100">
+                                <div class="car-list-item font-bold bg-slate-50 text-[11px] uppercase text-slate-400">
+                                    <span>Model</span>
+                                    <span>CO2 Impact</span>
+                                </div>
                                 <div class="car-list-item"><div class="car-name"><span class="car-rank">1.</span> Ford Ranger</div> <span class="car-stat">202g</span></div>
                                 <div class="car-list-item"><div class="car-name"><span class="car-rank">2.</span> Toyota RAV4</div> <span class="car-stat">107g</span></div>
                                 <div class="car-list-item"><div class="car-name"><span class="car-rank">3.</span> Toyota Hilux</div> <span class="car-stat">208g</span></div>
@@ -224,6 +241,10 @@
                                 <div class="car-list-item"><div class="car-name"><span class="car-rank">10.</span> Isuzu D-MAX</div> <span class="car-stat">212g</span></div>
                             </div>
                             <div>
+                                <div class="car-list-item font-bold bg-slate-50 text-[11px] uppercase text-slate-400">
+                                    <span>Model</span>
+                                    <span>CO2 Impact</span>
+                                </div>
                                 <div class="car-list-item"><div class="car-name"><span class="car-rank">11.</span> Chery Tiggo 4</div> <span class="car-stat">165g</span></div>
                                 <div class="car-list-item"><div class="car-name"><span class="car-rank">12.</span> Hyundai Tucson</div> <span class="car-stat">164g</span></div>
                                 <div class="car-list-item"><div class="car-name"><span class="car-rank">13.</span> MG ZS</div> <span class="car-stat">162g</span></div>
@@ -238,10 +259,64 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Biggest Polluters Section -->
+                <div class="mt-8 max-w-2xl mx-auto">
+                    <div class="bg-white border border-slate-200 shadow-sm rounded-sm">
+                        <div class="bg-[#ff4d4d] p-3 flex justify-between items-center text-white border-b border-slate-200">
+                            <div class="flex-1 text-center">
+                                <h4 class="font-extrabold text-sm uppercase tracking-tight">Biggest Polluters (Worst Performers)</h4>
+                            </div>
+                        </div>
+                        <div class="bg-white">
+                            <div class="car-list-item font-bold bg-slate-50 text-[11px] uppercase text-slate-400">
+                                <span>Model</span>
+                                <span>CO2 Impact</span>
+                            </div>
+                            <div class="car-list-item"><div class="car-name"><span class="car-rank">1.</span> Chevrolet Silverado 1500</div> <span class="car-stat car-stat-danger">390g</span></div>
+                            <div class="car-list-item"><div class="car-name"><span class="car-rank">2.</span> RAM 1500 (Hemi V8)</div> <span class="car-stat car-stat-danger">362g</span></div>
+                            <div class="car-list-item"><div class="car-name"><span class="car-rank">3.</span> Nissan Patrol (V8)</div> <span class="car-stat car-stat-danger">334g</span></div>
+                            <div class="car-list-item"><div class="car-name"><span class="car-rank">4.</span> RAM 2500 / 3500</div> <span class="car-stat car-stat-danger">322g</span></div>
+                            <div class="car-list-item"><div class="car-name"><span class="car-rank">5.</span> Toyota LandCruiser 70 (V8)</div> <span class="car-stat car-stat-danger">281g</span></div>
+                            <div class="car-list-item"><div class="car-name"><span class="car-rank">6.</span> Jeep Gladiator</div> <span class="car-stat car-stat-danger">274g</span></div>
+                            <div class="car-list-item"><div class="car-name"><span class="car-rank">7.</span> Land Rover Defender V8</div> <span class="car-stat car-stat-danger">268g</span></div>
+                            <div class="car-list-item"><div class="car-name"><span class="car-rank">8.</span> Toyota LandCruiser 300</div> <span class="car-stat car-stat-danger">235g</span></div>
+                            <div class="car-list-item"><div class="car-name"><span class="car-rank">9.</span> Volkswagen Amarok V6</div> <span class="car-stat car-stat-danger">222g</span></div>
+                            <div class="car-list-item"><div class="car-name"><span class="car-rank">10.</span> Toyota Prado (Diesel)</div> <span class="car-stat car-stat-danger">216g</span></div>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="mt-6 text-center">
-                    <p class="text-[11px] text-slate-400 font-medium italic">Average g/km for the most popular variants sold in AU</p>
+                    <p class="text-[11px] text-slate-400 font-medium italic">Average g/km based on combined cycle testing for Australian variants.</p>
                 </div>
             </section>
+
+            <!-- Travel Section -->
+            <section id="travel" class="category-section mb-24 scroll-mt-48">
+                <div class="mb-8">
+                    <h3 class="text-emerald-600 font-bold text-lg mb-4">
+                        Sustainable Travel Options
+                    </h3>
+                    <div class="bg-white border-l-4 border-emerald-500 p-6 shadow-sm rounded-r-lg max-w-2xl">
+                        <h4 class="font-bold text-slate-900 mb-1">Travel Impact</h4>
+                        <p class="text-sm text-slate-600 leading-relaxed">
+                            How we move from A to B matters. Explore rankings for airlines, public transport, and carbon-neutral travel providers.
+                        </p>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-white p-8 border border-slate-200 rounded-sm text-center">
+                        <i class="fas fa-plane-departure text-slate-300 text-4xl mb-4"></i>
+                        <p class="text-slate-500 text-sm">Aviation Impact Rankings Coming Soon</p>
+                    </div>
+                    <div class="bg-white p-8 border border-slate-200 rounded-sm text-center">
+                        <i class="fas fa-train text-slate-300 text-4xl mb-4"></i>
+                        <p class="text-slate-500 text-sm">Public Transport Efficiency Guide Coming Soon</p>
+                    </div>
+                </div>
+            </section>
+
         </div>
     </section>
 
