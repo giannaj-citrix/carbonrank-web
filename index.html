@@ -61,8 +61,8 @@
             width: 100%;
         }
 
-        /* Custom Table Styles for Lists */
-        .list-item {
+        /* Custom Table Styles for Car Lists */
+        .car-list-item {
             border-bottom: 1px solid #f1f5f9;
             padding: 10px 16px;
             display: flex;
@@ -70,18 +70,18 @@
             align-items: center;
             font-size: 13px;
         }
-        .list-item:last-child {
+        .car-list-item:last-child {
             border-bottom: none;
         }
-        .item-name {
+        .car-name {
             display: flex;
             align-items: center;
         }
-        .item-rank {
+        .car-rank {
             width: 24px;
             color: #94a3b8;
         }
-        .item-stat {
+        .car-stat {
             font-family: monospace;
             font-size: 11px;
             font-weight: 700;
@@ -139,8 +139,7 @@
     <div class="sticky top-20 z-40 bg-white border-b border-slate-100 overflow-x-auto category-nav">
         <div id="category-nav-links" class="max-w-7xl mx-auto px-6 py-4 flex space-x-12 whitespace-nowrap text-[15px] font-bold">
             <a href="#energy" class="nav-link transition">Electricity & Gas</a>
-            <a href="#cars" class="nav-link transition">Cars</a>
-            <a href="#travel" class="nav-link transition">Travel</a>
+            <a href="#cars" class="nav-link active transition">Travel & Cars</a>
             <a href="#scorecard" class="nav-link transition">Scorecard Rating</a>
             <a href="#connectivity" class="nav-link transition">Phone & Internet</a>
         </div>
@@ -150,7 +149,7 @@
         <div class="max-w-7xl mx-auto">
             
             <!-- Cars Section -->
-            <section id="cars" class="category-section mb-32 scroll-mt-48">
+            <section id="cars" class="category-section mb-24 scroll-mt-48">
                 <div class="mb-8">
                     <h3 class="text-emerald-600 font-bold text-lg mb-4">
                         Top 20 performers and sellers in Australia
@@ -160,7 +159,7 @@
                         <p class="text-sm text-slate-600 mb-3 leading-relaxed">
                             This is the <span class="font-bold text-slate-900">Carbon Cost</span> of your car. It measures how many grams of CO2 come out of the tailpipe for every single kilometre you drive.
                         </p>
-                        <p class="text-xs text-slate-500 italic">
+                        <p class="text-sm text-slate-600 leading-relaxed">
                             Lower is better. A typical 4x4 (200g+) creates twice the impact of a small hybrid (~100g).
                         </p>
                     </div>
@@ -177,28 +176,28 @@
                         
                         <div class="grid grid-cols-2 bg-white">
                             <div class="border-r border-slate-100">
-                                <div class="list-item"><div class="item-name"><span class="item-rank">1.</span> Tesla Model 3</div> <span class="item-stat">0g</span></div>
-                                <div class="list-item"><div class="item-name"><span class="item-rank">2.</span> BYD DOLPHIN</div> <span class="item-stat">0g</span></div>
-                                <div class="list-item"><div class="item-name"><span class="item-rank">3.</span> Lexus UX 300e</div> <span class="item-stat">0g</span></div>
-                                <div class="list-item"><div class="item-name"><span class="item-rank">4.</span> MG MG4</div> <span class="item-stat">0g</span></div>
-                                <div class="list-item"><div class="item-name"><span class="item-rank">5.</span> Chery E5</div> <span class="item-stat">0g</span></div>
-                                <div class="list-item"><div class="item-name"><span class="item-rank">6.</span> Toyota bZ4X</div> <span class="item-stat">0g</span></div>
-                                <div class="list-item"><div class="item-name"><span class="item-rank">7.</span> BYD SEAL</div> <span class="item-stat">0g</span></div>
-                                <div class="list-item"><div class="item-name"><span class="item-rank">8.</span> MINI JCW Hatch</div> <span class="item-stat">0g</span></div>
-                                <div class="list-item"><div class="item-name"><span class="item-rank">9.</span> Leapmotor B10</div> <span class="item-stat">0g</span></div>
-                                <div class="list-item"><div class="item-name"><span class="item-rank">10.</span> Mercedes EQA</div> <span class="item-stat">0g</span></div>
+                                <div class="car-list-item"><div class="car-name"><span class="car-rank">1.</span> Tesla Model 3</div> <span class="car-stat">0g</span></div>
+                                <div class="car-list-item"><div class="car-name"><span class="car-rank">2.</span> BYD DOLPHIN</div> <span class="car-stat">0g</span></div>
+                                <div class="car-list-item"><div class="car-name"><span class="car-rank">3.</span> Lexus UX 300e</div> <span class="car-stat">0g</span></div>
+                                <div class="car-list-item"><div class="car-name"><span class="car-rank">4.</span> MG MG4</div> <span class="car-stat">0g</span></div>
+                                <div class="car-list-item"><div class="car-name"><span class="car-rank">5.</span> Chery E5</div> <span class="car-stat">0g</span></div>
+                                <div class="car-list-item"><div class="car-name"><span class="car-rank">6.</span> Toyota bZ4X</div> <span class="car-stat">0g</span></div>
+                                <div class="car-list-item"><div class="car-name"><span class="car-rank">7.</span> BYD SEAL</div> <span class="car-stat">0g</span></div>
+                                <div class="car-list-item"><div class="car-name"><span class="car-rank">8.</span> MINI JCW Hatch</div> <span class="car-stat">0g</span></div>
+                                <div class="car-list-item"><div class="car-name"><span class="car-rank">9.</span> Leapmotor B10</div> <span class="car-stat">0g</span></div>
+                                <div class="car-list-item"><div class="car-name"><span class="car-rank">10.</span> Mercedes EQA</div> <span class="car-stat">0g</span></div>
                             </div>
                             <div>
-                                <div class="list-item"><div class="item-name"><span class="item-rank">11.</span> Subaru Solterra</div> <span class="item-stat">0g</span></div>
-                                <div class="list-item"><div class="item-name"><span class="item-rank">12.</span> MINI JCW Aceman</div> <span class="item-stat">0g</span></div>
-                                <div class="list-item"><div class="item-name"><span class="item-rank">13.</span> Hyundai IONIQ 6</div> <span class="item-stat">0g</span></div>
-                                <div class="list-item"><div class="item-name"><span class="item-rank">14.</span> Hyundai INSTER</div> <span class="item-stat">0g</span></div>
-                                <div class="list-item"><div class="item-name"><span class="item-rank">15.</span> Fiat 500e</div> <span class="item-stat">0g</span></div>
-                                <div class="list-item"><div class="item-name"><span class="item-rank">16.</span> Mercedes EQB</div> <span class="item-stat">0g</span></div>
-                                <div class="list-item"><div class="item-name"><span class="item-rank">17.</span> BYD ATTO 3</div> <span class="item-stat">0g</span></div>
-                                <div class="list-item"><div class="item-name"><span class="item-rank">18.</span> Kia EV3</div> <span class="item-stat">0g</span></div>
-                                <div class="list-item"><div class="item-name"><span class="item-rank">19.</span> Lexus RZ 450e</div> <span class="item-stat">0g</span></div>
-                                <div class="list-item"><div class="item-name"><span class="item-rank">20.</span> Alfa Junior</div> <span class="item-stat">0g</span></div>
+                                <div class="car-list-item"><div class="car-name"><span class="car-rank">11.</span> Subaru Solterra</div> <span class="car-stat">0g</span></div>
+                                <div class="car-list-item"><div class="car-name"><span class="car-rank">12.</span> MINI JCW Aceman</div> <span class="car-stat">0g</span></div>
+                                <div class="car-list-item"><div class="car-name"><span class="car-rank">13.</span> Hyundai IONIQ 6</div> <span class="car-stat">0g</span></div>
+                                <div class="car-list-item"><div class="car-name"><span class="car-rank">14.</span> Hyundai INSTER</div> <span class="car-stat">0g</span></div>
+                                <div class="car-list-item"><div class="car-name"><span class="car-rank">15.</span> Fiat 500e</div> <span class="car-stat">0g</span></div>
+                                <div class="car-list-item"><div class="car-name"><span class="car-rank">16.</span> Mercedes EQB</div> <span class="car-stat">0g</span></div>
+                                <div class="car-list-item"><div class="car-name"><span class="car-rank">17.</span> BYD ATTO 3</div> <span class="car-stat">0g</span></div>
+                                <div class="car-list-item"><div class="car-name"><span class="car-rank">18.</span> Kia EV3</div> <span class="car-stat">0g</span></div>
+                                <div class="car-list-item"><div class="car-name"><span class="car-rank">19.</span> Lexus RZ 450e</div> <span class="car-stat">0g</span></div>
+                                <div class="car-list-item"><div class="car-name"><span class="car-rank">20.</span> Alfa Junior</div> <span class="car-stat">0g</span></div>
                             </div>
                         </div>
                     </div>
@@ -213,80 +212,34 @@
                         
                         <div class="grid grid-cols-2 bg-white">
                             <div class="border-r border-slate-100">
-                                <div class="list-item"><div class="item-name"><span class="item-rank">1.</span> Ford Ranger</div> <span class="item-stat">202g</span></div>
-                                <div class="list-item"><div class="item-name"><span class="item-rank">2.</span> Toyota RAV4</div> <span class="item-stat">107g</span></div>
-                                <div class="list-item"><div class="item-name"><span class="item-rank">3.</span> Toyota Hilux</div> <span class="item-stat">208g</span></div>
-                                <div class="list-item"><div class="item-name"><span class="item-rank">4.</span> Toyota Prado</div> <span class="item-stat">216g</span></div>
-                                <div class="list-item"><div class="item-name"><span class="item-rank">5.</span> Ford Everest</div> <span class="item-stat">199g</span></div>
-                                <div class="list-item"><div class="item-name"><span class="item-rank">6.</span> Hyundai Kona</div> <span class="item-stat">145g</span></div>
-                                <div class="list-item"><div class="item-name"><span class="item-rank">7.</span> Mazda CX-5</div> <span class="item-stat">161g</span></div>
-                                <div class="list-item"><div class="item-name"><span class="item-rank">8.</span> Mitsu Outlander</div> <span class="item-stat">154g</span></div>
-                                <div class="list-item"><div class="item-name"><span class="item-rank">9.</span> Tesla Model Y</div> <span class="item-stat">0g</span></div>
-                                <div class="list-item"><div class="item-name"><span class="item-rank">10.</span> Isuzu D-MAX</div> <span class="item-stat">212g</span></div>
+                                <div class="car-list-item"><div class="car-name"><span class="car-rank">1.</span> Ford Ranger</div> <span class="car-stat">202g</span></div>
+                                <div class="car-list-item"><div class="car-name"><span class="car-rank">2.</span> Toyota RAV4</div> <span class="car-stat">107g</span></div>
+                                <div class="car-list-item"><div class="car-name"><span class="car-rank">3.</span> Toyota Hilux</div> <span class="car-stat">208g</span></div>
+                                <div class="car-list-item"><div class="car-name"><span class="car-rank">4.</span> Toyota Prado</div> <span class="car-stat">216g</span></div>
+                                <div class="car-list-item"><div class="car-name"><span class="car-rank">5.</span> Ford Everest</div> <span class="car-stat">199g</span></div>
+                                <div class="car-list-item"><div class="car-name"><span class="car-rank">6.</span> Hyundai Kona</div> <span class="car-stat">145g</span></div>
+                                <div class="car-list-item"><div class="car-name"><span class="car-rank">7.</span> Mazda CX-5</span></div> <span class="car-stat">161g</span></div>
+                                <div class="car-list-item"><div class="car-name"><span class="car-rank">8.</span> Mitsu Outlander</div> <span class="car-stat">154g</span></div>
+                                <div class="car-list-item"><div class="car-name"><span class="car-rank">9.</span> Tesla Model Y</div> <span class="car-stat">0g</span></div>
+                                <div class="car-list-item"><div class="car-name"><span class="car-rank">10.</span> Isuzu D-MAX</div> <span class="car-stat">212g</span></div>
                             </div>
                             <div>
-                                <div class="list-item"><div class="item-name"><span class="item-rank">11.</span> Chery Tiggo 4</div> <span class="item-stat">165g</span></div>
-                                <div class="list-item"><div class="item-name"><span class="item-rank">12.</span> Hyundai Tucson</div> <span class="item-stat">164g</span></div>
-                                <div class="list-item"><div class="item-name"><span class="item-rank">13.</span> MG ZS</div> <span class="item-stat">162g</span></div>
-                                <div class="list-item"><div class="item-name"><span class="item-rank">14.</span> Haval Jolion</div> <span class="item-stat">151g</span></div>
-                                <div class="list-item"><div class="item-name"><span class="item-rank">15.</span> Kia Sportage</div> <span class="item-stat">163g</span></div>
-                                <div class="list-item"><div class="item-name"><span class="item-rank">16.</span> Toyota Corolla</div> <span class="item-stat">91g</span></div>
-                                <div class="list-item"><div class="item-name"><span class="item-rank">17.</span> BYD SHARK 6</div> <span class="item-stat">152g</span></div>
-                                <div class="list-item"><div class="item-name"><span class="item-rank">18.</span> Mitsu Triton</div> <span class="item-stat">210g</span></div>
-                                <div class="list-item"><div class="item-name"><span class="item-rank">19.</span> Nissan X-Trail</div> <span class="item-stat">155g</span></div>
-                                <div class="list-item"><div class="item-name"><span class="item-rank">20.</span> Isuzu MU-X</div> <span class="item-stat">214g</span></div>
+                                <div class="car-list-item"><div class="car-name"><span class="car-rank">11.</span> Chery Tiggo 4</div> <span class="car-stat">165g</span></div>
+                                <div class="car-list-item"><div class="car-name"><span class="car-rank">12.</span> Hyundai Tucson</div> <span class="car-stat">164g</span></div>
+                                <div class="car-list-item"><div class="car-name"><span class="car-rank">13.</span> MG ZS</div> <span class="car-stat">162g</span></div>
+                                <div class="car-list-item"><div class="car-name"><span class="car-rank">14.</span> Haval Jolion</div> <span class="car-stat">151g</span></div>
+                                <div class="car-list-item"><div class="car-name"><span class="car-rank">15.</span> Kia Sportage</div> <span class="car-stat">163g</span></div>
+                                <div class="car-list-item"><div class="car-name"><span class="car-rank">16.</span> Toyota Corolla</div> <span class="car-stat">91g</span></div>
+                                <div class="car-list-item"><div class="car-name"><span class="car-rank">17.</span> BYD SHARK 6</div> <span class="car-stat">152g</span></div>
+                                <div class="car-list-item"><div class="car-name"><span class="car-rank">18.</span> Mitsu Triton</div> <span class="car-stat">210g</span></div>
+                                <div class="car-list-item"><div class="car-name"><span class="car-rank">19.</span> Nissan X-Trail</div> <span class="car-stat">155g</span></div>
+                                <div class="car-list-item"><div class="car-name"><span class="car-rank">20.</span> Isuzu MU-X</div> <span class="car-stat">214g</span></div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </section>
-
-            <!-- New Travel Section -->
-            <section id="travel" class="category-section mb-32 scroll-mt-48">
-                <div class="mb-8">
-                    <h3 class="text-emerald-600 font-bold text-lg mb-4">
-                        Aviation & Long Distance Travel
-                    </h3>
-                    <div class="bg-white border-l-4 border-sky-500 p-6 shadow-sm rounded-r-lg max-w-2xl">
-                        <h4 class="font-bold text-slate-900 mb-1">How is air travel measured?</h4>
-                        <p class="text-sm text-slate-600 mb-3 leading-relaxed">
-                            Flight impact is measured in <span class="font-bold text-slate-900">kg of CO2 per passenger</span>. 
-                            Short flights have higher intensity due to takeoff energy, while long-haul flights accumulate massive totals due to distance.
-                        </p>
-                        <p class="text-xs text-slate-500 italic">
-                            Carbon ROI: A single flight to London emits more than a year of driving a small car.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                    <!-- Domestic Travel -->
-                    <div class="bg-white border border-slate-200 shadow-sm rounded-sm">
-                        <div class="bg-sky-100 p-3 text-center text-slate-900 border-b border-slate-200">
-                            <h4 class="font-extrabold text-sm uppercase tracking-tight">Common Domestic Routes (One-Way)</h4>
-                        </div>
-                        <div class="bg-white">
-                            <div class="list-item"><div class="item-name">Sydney to Melbourne</div> <span class="item-stat">95kg</span></div>
-                            <div class="list-item"><div class="item-name">Brisbane to Sydney</div> <span class="item-stat">88kg</span></div>
-                            <div class="list-item"><div class="item-name">Perth to Sydney</div> <span class="item-stat">285kg</span></div>
-                            <div class="list-item"><div class="item-name">Melbourne to Gold Coast</div> <span class="item-stat">145kg</span></div>
-                            <div class="list-item"><div class="item-name">Adelaide to Melbourne</div> <span class="item-stat">78kg</span></div>
-                        </div>
-                    </div>
-
-                    <!-- International Travel -->
-                    <div class="bg-white border border-slate-200 shadow-sm rounded-sm">
-                        <div class="bg-slate-900 p-3 text-center text-white border-b border-slate-200">
-                            <h4 class="font-extrabold text-sm uppercase tracking-tight">International Long-Haul (One-Way)</h4>
-                        </div>
-                        <div class="bg-white">
-                            <div class="list-item"><div class="item-name">Sydney to London</div> <span class="item-stat">1,450kg</span></div>
-                            <div class="list-item"><div class="item-name">Melbourne to Los Angeles</div> <span class="item-stat">1,120kg</span></div>
-                            <div class="list-item"><div class="item-name">Sydney to Bali (Denpasar)</div> <span class="item-stat">380kg</span></div>
-                            <div class="list-item"><div class="item-name">Perth to London</div> <span class="item-stat">1,280kg</span></div>
-                            <div class="list-item"><div class="item-name">Sydney to Tokyo</div> <span class="item-stat">690kg</span></div>
-                        </div>
-                    </div>
+                <div class="mt-6 text-center">
+                    <p class="text-[11px] text-slate-400 font-medium italic">Average g/km for the most popular variants sold in AU</p>
                 </div>
             </section>
         </div>
